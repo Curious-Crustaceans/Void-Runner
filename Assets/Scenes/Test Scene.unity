@@ -170,7 +170,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 40
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -302,6 +302,12 @@ PrefabInstance:
       objectReference: {fileID: 608721194}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91daad0052fff014c854251a3aa04106, type: 3}
+--- !u!1 &1792865527 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1536870378317479165, guid: 91daad0052fff014c854251a3aa04106,
+    type: 3}
+  m_PrefabInstance: {fileID: 1416802925}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1951014818
 GameObject:
   m_ObjectHideFlags: 0
@@ -312,6 +318,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1951014820}
   - component: {fileID: 1951014819}
+  - component: {fileID: 1951014821}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -331,8 +338,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21758681037435d4e8a4127458c7b9e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelSize: 20
-  room: {fileID: 453066799664309827, guid: 6ad2e630ee531a94ab8a78712ed81108, type: 3}
+  levelSize: 5
+  room: {fileID: 453066799664309827, guid: 181c85927206c2142b9ef879e173dc37, type: 3}
 --- !u!4 &1951014820
 Transform:
   m_ObjectHideFlags: 0
@@ -347,3 +354,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1951014821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1951014818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac80bc0ef8422074dae26e93c700b00d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1792865527}
+  cam: {fileID: 608721192}
