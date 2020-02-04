@@ -79,7 +79,7 @@ public class ProcGen : MonoBehaviour
                     int bits = (int) dungeon[k, l].z;
                     Debug.Log(bits);
                     string doorArray = Convert.ToString(bits, 10);
-
+                  
                     {
                         if (doorArray[2] == '1')
                         {
