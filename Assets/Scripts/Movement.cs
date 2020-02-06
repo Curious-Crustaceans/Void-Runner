@@ -6,17 +6,18 @@ public class Movement : MonoBehaviour
 {
     public float speed = 10f;            // The speed that the player will move at.
 
-    Vector3 movement;                   // The vector to store the direction of the player's movement.
+   
     bool canMove = true;
     Rigidbody playerRigidbody;          // Reference to the player's rigidbody.
     Transform transf;                    // A layer mask so that a ray can be cast just at gameobjects on the floor layer.
     int dir = 1;
     public Camera cam;
+    Vector3 goalV;
     void Awake()
     {
 
 
-        
+        goalV.y = 0;
         transf=GetComponent<Transform>();
         playerRigidbody = GetComponent<Rigidbody>();
     }
@@ -34,11 +35,12 @@ public class Movement : MonoBehaviour
         if (canMove)
         {
             // Store the input axes.
-            float h = Input.GetAxisRaw("Horizontal");
-            float v = Input.GetAxisRaw("Vertical");
+            goalV.x = Input.GetAxisRaw("Horizontal");
+            goalV.z = Input.GetAxisRaw("Vertical");
 
-            // Move the player around the scene.
-            Move(h, v);
+            goalV.Normalize();
+            
+           
         }
         else
             canMove = true;
@@ -46,17 +48,17 @@ public class Movement : MonoBehaviour
         
 
     }
-
-    void Move(float h, float v)
+    void FixedUpdate()
     {
-        // Set the movement vector based on the axis input.
-        movement.Set(h, 0f, v);
+        Move(goalV);
+    }
 
-        // Normalise the movement vector and make it proportional to the speed per second.
-        movement = movement.normalized * speed * Time.deltaTime;
+    void Move(Vector3 goal_velocity)
+    {
+     
 
-        // Move the player to it's current position plus the movement.
-        playerRigidbody.MovePosition(transform.position + movement);
+       
+        playerRigidbody.AddForce((goal_velocity*10 -playerRigidbody.velocity)*speed);
     }
 
     void Shift(int dir)

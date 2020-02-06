@@ -210,6 +210,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1536870378317479152, guid: 91daad0052fff014c854251a3aa04106,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 07902ef4f1b96c44993b92b288f05c50,
+        type: 2}
     - target: {fileID: 1536870378317479155, guid: 91daad0052fff014c854251a3aa04106,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -218,7 +224,7 @@ PrefabInstance:
     - target: {fileID: 1536870378317479155, guid: 91daad0052fff014c854251a3aa04106,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 1536870378317479155, guid: 91daad0052fff014c854251a3aa04106,
         type: 3}
@@ -289,6 +295,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Constraints
       value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 1536870378317479166, guid: 91daad0052fff014c854251a3aa04106,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1536870378317479166, guid: 91daad0052fff014c854251a3aa04106,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1536870378317479167, guid: 91daad0052fff014c854251a3aa04106,
         type: 3}

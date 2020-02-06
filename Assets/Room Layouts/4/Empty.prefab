@@ -554,9 +554,9 @@ Light:
   m_GameObject: {fileID: 1027472970788426217}
   m_Enabled: 1
   serializedVersion: 9
-  m_Type: 0
-  m_Color: {r: 0.990566, g: 0.990566, b: 0.990566, a: 1}
-  m_Intensity: 0.5
+  m_Type: 2
+  m_Color: {r: 1, g: 0.78079355, b: 0, a: 1}
+  m_Intensity: 1.08
   m_Range: 40
   m_SpotAngle: 179
   m_InnerSpotAngle: 1
@@ -595,7 +595,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -1311,10 +1311,10 @@ Light:
   m_GameObject: {fileID: 9096756670895253582}
   m_Enabled: 1
   serializedVersion: 9
-  m_Type: 0
+  m_Type: 2
   m_Color: {r: 0.990566, g: 0.990566, b: 0.990566, a: 1}
   m_Intensity: 2
-  m_Range: 40
+  m_Range: 57.853447
   m_SpotAngle: 179
   m_InnerSpotAngle: 1
   m_CookieSize: 10
@@ -1324,7 +1324,7 @@ Light:
     m_CustomResolution: -1
     m_Strength: 1
     m_Bias: 0.004
-    m_NormalBias: 0.26
+    m_NormalBias: 0
     m_NearPlane: 0.1
     m_CullingMatrixOverride:
       e00: 1
@@ -1360,7 +1360,7 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: -0.02, w: 1e-45}
   m_UseBoundingSphereOverride: 0
-  m_ShadowRadius: 0
+  m_ShadowRadius: 5.68
   m_ShadowAngle: 0
 --- !u!1001 &29254609307328312
 PrefabInstance:
