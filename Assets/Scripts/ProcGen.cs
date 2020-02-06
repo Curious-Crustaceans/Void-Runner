@@ -83,22 +83,22 @@ public class ProcGen : MonoBehaviour
                     {
                         if (doorArray[2] == '1')
                         {
-                            GameObject North = newRoom.transform.Find("doorN").gameObject;
+                            GameObject North = newRoom.transform.Find("Main").transform.Find("doorN").gameObject;
                             North.GetComponent<Doors>().setState("open");
                         }
                         if (doorArray[3] == '1')
                         {
-                            GameObject East = newRoom.transform.Find("door").gameObject;
+                            GameObject East = newRoom.transform.Find("Main").transform.transform.Find("door").gameObject;
                             East.GetComponent<Doors>().setState("open");
                         }
                         if (doorArray[4] == '1')
                         {
-                            GameObject South = newRoom.transform.Find("doorS").gameObject;
+                            GameObject South = newRoom.transform.Find("Main").transform.transform.Find("doorS").gameObject;
                             South.GetComponent<Doors>().setState("open");
                         }
                         if (doorArray[1] == '1')
                         {
-                            GameObject West = newRoom.transform.Find("doorW").gameObject;
+                            GameObject West = newRoom.transform.Find("Main").transform.transform.Find("doorW").gameObject;
                             West.GetComponent<Doors>().setState("open");
                         }
                     }

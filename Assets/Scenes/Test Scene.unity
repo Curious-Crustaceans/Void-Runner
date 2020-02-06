@@ -171,7 +171,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 40
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -224,6 +224,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1536870378317479152, guid: 91daad0052fff014c854251a3aa04106,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 07902ef4f1b96c44993b92b288f05c50,
+        type: 2}
     - target: {fileID: 1536870378317479155, guid: 91daad0052fff014c854251a3aa04106,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -232,7 +238,7 @@ PrefabInstance:
     - target: {fileID: 1536870378317479155, guid: 91daad0052fff014c854251a3aa04106,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 1536870378317479155, guid: 91daad0052fff014c854251a3aa04106,
         type: 3}
@@ -304,6 +310,16 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 112
       objectReference: {fileID: 0}
+    - target: {fileID: 1536870378317479166, guid: 91daad0052fff014c854251a3aa04106,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1536870378317479166, guid: 91daad0052fff014c854251a3aa04106,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1536870378317479167, guid: 91daad0052fff014c854251a3aa04106,
         type: 3}
       propertyPath: speed
@@ -316,6 +332,12 @@ PrefabInstance:
       objectReference: {fileID: 608721194}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91daad0052fff014c854251a3aa04106, type: 3}
+--- !u!1 &1792865527 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1536870378317479165, guid: 91daad0052fff014c854251a3aa04106,
+    type: 3}
+  m_PrefabInstance: {fileID: 1416802925}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1951014818
 GameObject:
   m_ObjectHideFlags: 0
@@ -326,6 +348,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1951014820}
   - component: {fileID: 1951014819}
+  - component: {fileID: 1951014821}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -345,8 +368,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21758681037435d4e8a4127458c7b9e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelSize: 20
-  room: {fileID: 453066799664309827, guid: 6ad2e630ee531a94ab8a78712ed81108, type: 3}
+  levelSize: 5
+  room: {fileID: 453066799664309827, guid: 181c85927206c2142b9ef879e173dc37, type: 3}
 --- !u!4 &1951014820
 Transform:
   m_ObjectHideFlags: 0
@@ -361,9 +384,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2065540889 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1536870378317479165, guid: 91daad0052fff014c854251a3aa04106,
-    type: 3}
-  m_PrefabInstance: {fileID: 1416802925}
-  m_PrefabAsset: {fileID: 0}
