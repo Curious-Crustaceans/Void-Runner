@@ -216,7 +216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52e49b02d5558034fb897bceab4e2cde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 2065540889}
+  player: {fileID: 0}
 --- !u!1001 &1416802925
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -369,7 +369,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelSize: 5
-  room: {fileID: 453066799664309827, guid: 181c85927206c2142b9ef879e173dc37, type: 3}
+  room: {fileID: 453066799664309827, guid: 6ad2e630ee531a94ab8a78712ed81108, type: 3}
 --- !u!4 &1951014820
 Transform:
   m_ObjectHideFlags: 0
@@ -384,3 +384,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1951014821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1951014818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac80bc0ef8422074dae26e93c700b00d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1792865527}
+  cam: {fileID: 608721192}
