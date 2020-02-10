@@ -19,7 +19,7 @@ public class Enemy_Shoot : MonoBehaviour
 
     void Start()
     {
-        target = GameObject.Find("Capsule");
+        target = GameObject.Find("Player");
         t1 = target.transform;
         origin = GetComponent<Transform>();
     }
