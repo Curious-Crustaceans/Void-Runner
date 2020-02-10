@@ -67,7 +67,7 @@ public class Enemy_Shoot : MonoBehaviour
         //print(t1);
         var active_bullet = Instantiate(bullet, start, Quaternion.identity);
         active_bullet.GetComponent<Rigidbody>().velocity = v;
-        Destroy(bullet, 2.0f); //might change later
+        Destroy(active_bullet, 2.0f); //might change later
     }
 
     bool CheckClose(){

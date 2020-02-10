@@ -18,7 +18,7 @@ public class ProcGen : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        FourRoom = Resources.LoadAll("4");
+        FourRoom = Resources.LoadAll("4",typeof(GameObject));
         dungeon[11, 11].x = 1;
         IncAdj(11, 11);
         int i = 0;
