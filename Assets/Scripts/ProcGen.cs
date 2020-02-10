@@ -9,14 +9,16 @@ public class ProcGen : MonoBehaviour
 {
     
     public int levelSize;
-    public GameObject room;
-    Vector3 [,] dungeon =  new  Vector3[21,21];
     
+    Vector3 [,] dungeon =  new Vector3[21,21];
+    
+    private UnityEngine.Object[] FourRoom;
     //Initializes a matrix that represents the level. Each room is a vector2 where x is if the room exists and y is the number of adjacent rooms. Z is a way to keep track of which walls need to have connections. This number is represented by a psuedo binary number in base ten.
 
     // Start is called before the first frame update
     void Start()
     {
+        FourRoom = Resources.LoadAll("4");
         dungeon[11, 11].x = 1;
         IncAdj(11, 11);
         int i = 0;
@@ -75,33 +77,12 @@ public class ProcGen : MonoBehaviour
                 if (dungeon[k, l].x == 1)
                 {
 
-                    GameObject newRoom = Instantiate(room, new Vector3((l - 11) * 36, 0, (k - 11) * 36), Quaternion.identity);
+                    GameObject newRoom = Instantiate((GameObject)FourRoom[Random.Range(0, FourRoom.Length)], new Vector3((l - 11) * 36, 0, (k - 11) * 36), Quaternion.identity);
                     int bits = (int) dungeon[k, l].z;
-                    Debug.Log(bits);
-                    string doorArray = Convert.ToString(bits, 10);
                   
-                    {
-                        if (doorArray[2] == '1')
-                        {
-                            GameObject North = newRoom.transform.Find("Main").transform.Find("doorN").gameObject;
-                            North.GetComponent<Doors>().setState("open");
-                        }
-                        if (doorArray[3] == '1')
-                        {
-                            GameObject East = newRoom.transform.Find("Main").transform.transform.Find("door").gameObject;
-                            East.GetComponent<Doors>().setState("open");
-                        }
-                        if (doorArray[4] == '1')
-                        {
-                            GameObject South = newRoom.transform.Find("Main").transform.transform.Find("doorS").gameObject;
-                            South.GetComponent<Doors>().setState("open");
-                        }
-                        if (doorArray[1] == '1')
-                        {
-                            GameObject West = newRoom.transform.Find("Main").transform.transform.Find("doorW").gameObject;
-                            West.GetComponent<Doors>().setState("open");
-                        }
-                    }
+                    string doorArray = Convert.ToString(bits, 10);
+                    newRoom.GetComponent<RoomManager>().init(doorArray);
+               
                     
                 }
             

@@ -354,8 +354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21758681037435d4e8a4127458c7b9e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelSize: 5
-  room: {fileID: 453066799664309827, guid: 181c85927206c2142b9ef879e173dc37, type: 3}
+  levelSize: 10
 --- !u!4 &1951014820
 Transform:
   m_ObjectHideFlags: 0

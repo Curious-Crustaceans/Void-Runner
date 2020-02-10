@@ -9,6 +9,7 @@ public class Doors : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Animator anim = doors.GetComponent<Animator>();
 
     }
 
