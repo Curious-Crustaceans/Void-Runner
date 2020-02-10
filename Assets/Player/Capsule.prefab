@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1536870378317479152}
   - component: {fileID: 1536870378317479167}
   - component: {fileID: 1536870378317479166}
+  - component: {fileID: 7394571284142410351}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -125,3 +126,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!114 &7394571284142410351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536870378317479165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 843dbf4cec0844236a2772ddbd8ee7e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player_bullet: {fileID: 0}
+  reload_time: 2
+  bullet_speed: 10
+  offset: 1
