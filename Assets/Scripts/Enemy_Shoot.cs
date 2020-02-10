@@ -49,7 +49,7 @@ public class Enemy_Shoot : MonoBehaviour
         {
             Vector3 direction = t1.position - origin.position;
             direction.y = 0;
-            Vector3 start = direction.normalized * 2;
+            Vector3 start = direction.normalized + origin.position;
             start.y = 1.2f;
             direction = direction.normalized * bullet_speed;
             EnemyFire(direction, start);
@@ -63,6 +63,8 @@ public class Enemy_Shoot : MonoBehaviour
         //print(v);
         //print("Vector origin");
         //print(start);
+        //print("Vector Target");
+        //print(t1);
         var active_bullet = Instantiate(bullet, start, Quaternion.identity);
         active_bullet.GetComponent<Rigidbody>().velocity = v;
         Destroy(bullet, 2.0f); //might change later
