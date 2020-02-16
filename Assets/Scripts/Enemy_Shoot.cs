@@ -75,4 +75,15 @@ public class Enemy_Shoot : MonoBehaviour
         float length = Mathf.Abs(distance.magnitude);
         return length < 9f;
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+
+        if (other.tag == "Player")
+            {
+                other.gameObject.GetComponent<PlayerDMG>().TakeDMG(bulletDMG);
+    
+            }
+        
+    }
 }
