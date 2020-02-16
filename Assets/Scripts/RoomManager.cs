@@ -15,11 +15,7 @@ public class RoomManager : MonoBehaviour
 
     void Update()
     {
-        if ((gameObject.transform.position +  -player.transform.position).magnitude > 8)
-             openDoors();
-            else
-            closeDoors();
-                
+        
     }
 
     public void init(string doorArray)
@@ -44,7 +40,8 @@ public class RoomManager : MonoBehaviour
             doors.Add(doorW);
         }
 
-        openDoors();
+         openDoorsInitial();
+
 
     }
 
@@ -61,7 +58,15 @@ public class RoomManager : MonoBehaviour
         {
             door.GetComponent<Doors>().setState("open");
         }
-    } 
+    }
+
+    void openDoorsInitial()
+    {
+        foreach (GameObject door in doors)
+        {
+            door.GetComponent<Doors>().setState("openInitial");
+        }
+    }
 
 
 
