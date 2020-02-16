@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1543075040063742608}
   m_Layer: 0
   m_Name: Turret
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -107,10 +107,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 3410436837326743179, guid: 7ebfd9009e0894416aabbe9a0bab2f11, type: 3}
-  bullet_speed: 6.5
+  bullet_speed: 20
   time: 0
   bullets: 1
-  recoilTime: 2
+  recoilTime: 0.5
 --- !u!1001 &2658401313759629342
 PrefabInstance:
   m_ObjectHideFlags: 0
