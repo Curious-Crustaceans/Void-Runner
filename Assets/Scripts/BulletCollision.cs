@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BulletCollision : MonoBehaviour
 {
+    public int bulletDMG = 1;
     
     // Start is called before the first frame update
     void Start()
@@ -17,8 +18,14 @@ public class BulletCollision : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        Destroy(this.gameObject);
+        Destroy(gameObject);
+
+
+        if (other.tag == "Player")
+            {
+                other.gameObject.GetComponent<PlayerDMG>().TakeDMG(bulletDMG);
+            }
     }
 }
