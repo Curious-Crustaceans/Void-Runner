@@ -6,10 +6,11 @@ public class Doors : MonoBehaviour
 {
     public GameObject walls;
     public GameObject doors;
+    private Animator anim;
     // Start is called before the first frame update
     void Start()
     {
-        Animator anim = doors.GetComponent<Animator>();
+        
 
     }
 
@@ -21,8 +22,20 @@ public class Doors : MonoBehaviour
 
     public void setState(string state)
     {
-        if (state == "open")
+        anim = doors.GetComponent<Animator>();
+        if (state == "openInitial") {
             walls.SetActive(false);
             doors.SetActive(true);
+        }
+        if (state == "closed")
+        {
+            anim.SetBool("Open", false);
+        
+        }
+        if (state == "open")
+        {
+            anim.SetBool("Open", true);
+
+        }
     }
 }
