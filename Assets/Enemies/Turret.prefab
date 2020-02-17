@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4104191642607431613}
   - component: {fileID: 4104191642607431612}
   - component: {fileID: 1543075040063742608}
+  - component: {fileID: 1623326943755553532}
   m_Layer: 0
   m_Name: Turret
   m_TagString: Enemy
@@ -111,6 +112,19 @@ MonoBehaviour:
   time: 0
   bullets: 1
   recoilTime: 0.5
+--- !u!114 &1623326943755553532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4104191642607431615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f8efabe711579f4e81db2078ffa3081, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy_health: 0
 --- !u!1001 &2658401313759629342
 PrefabInstance:
   m_ObjectHideFlags: 0

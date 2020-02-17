@@ -76,14 +76,5 @@ public class Enemy_Shoot : MonoBehaviour
         return length < 9f;
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-
-        if (other.tag == "Player")
-            {
-                other.gameObject.GetComponent<PlayerDMG>().TakeDMG(bulletDMG);
-    
-            }
-        
-    }
+   
 }

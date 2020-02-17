@@ -20,12 +20,18 @@ public class BulletCollision : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(gameObject);
+
 
 
         if (other.tag == "Player")
-            {
-                other.gameObject.GetComponent<PlayerDMG>().TakeDMG(bulletDMG);
-            }
+        {
+            other.gameObject.GetComponent<PlayerDMG>().TakeDMG(bulletDMG);
+            Destroy(gameObject);
+        }
+        else
+            if (other.tag != "transparent")
+        {
+            Destroy(gameObject);
+        }
     }
 }

@@ -18,7 +18,7 @@ public class PlayerBulletCollision : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {  
-        if (other.tag != "Player")
+        if (other.tag != "Player" && other.tag != "transparent")
             Destroy(gameObject);
 
         if (other.tag == "Enemy")
