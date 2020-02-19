@@ -43,8 +43,8 @@ MonoBehaviour:
   bullets: 50
   spray_range: 12
   bullet: {fileID: 3410436837326743179, guid: 7ebfd9009e0894416aabbe9a0bab2f11, type: 3}
-  bullet_speed: 20
-  recoil_time: 1
+  bullet_speed: 10
+  recoil_time: 2
 --- !u!1107 &-3504983266164678565
 AnimatorStateMachine:
   serializedVersion: 5
@@ -137,13 +137,13 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Exit_Spray
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer

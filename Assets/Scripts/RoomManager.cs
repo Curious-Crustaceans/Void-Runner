@@ -7,15 +7,34 @@ public class RoomManager : MonoBehaviour
 {
     List<GameObject> doors = new List<GameObject>();
     // Start is called before the first frame update
+    private bool active = false;
     public GameObject doorN;
     public GameObject door;
     public GameObject doorS;
     public GameObject doorW;
     public GameObject player;
-
+    private List<GameObject> roomEnemies = new List<GameObject>();
+    private bool alive = false;
     void Update()
     {
         
+       
+ 
+
+        if (active)
+        {
+            alive = false;
+            foreach (GameObject enemy in roomEnemies)
+            { if (enemy != null)
+                    alive = true;
+            }
+            if (!alive)
+            {
+                openDoors();
+                active = false;
+            }
+
+        }
     }
 
     public void init(string doorArray)
@@ -39,8 +58,13 @@ public class RoomManager : MonoBehaviour
         {
             doors.Add(doorW);
         }
-
-         openDoorsInitial();
+        foreach (Transform child in gameObject.transform)
+        {
+            if (child.tag == "Enemy")
+                roomEnemies.Add(child.gameObject);
+        }
+        openDoorsInitial();
+     
 
 
     }
@@ -49,7 +73,7 @@ public class RoomManager : MonoBehaviour
     {
         foreach (GameObject door in doors)
         { 
-            door.GetComponent<Doors>().setState("close");
+            door.GetComponent<Doors>().setState("closed");
         }
     }
     void openDoors()
@@ -67,6 +91,34 @@ public class RoomManager : MonoBehaviour
             door.GetComponent<Doors>().setState("openInitial");
         }
     }
+
+    void activateEnemies(bool x)
+    {
+        foreach (GameObject enemy in roomEnemies)
+        {
+            enemy.GetComponent<EnemyMind>().setActive(x);
+        }
+    }
+    void voidEnemies(bool x)
+    {
+        foreach (GameObject enemy in roomEnemies)
+        {
+            enemy.GetComponent<EnemyMind>().setVoid(x);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            active = true;
+            closeDoors();
+            
+        }
+        
+    }
+
+
 
 
 

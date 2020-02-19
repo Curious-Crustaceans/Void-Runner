@@ -10,7 +10,7 @@ public class PlayerShooting : MonoBehaviour
     public float reload_time = 0.5f;
     public float bullet_speed = 10f;
     public int player_dmg;
-    int starting_damage = 10;
+    int starting_damage = 1;
     float last_fired;
     public float momentum = 0.02f;
     float v;

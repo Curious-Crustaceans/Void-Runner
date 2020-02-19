@@ -16,6 +16,11 @@ public class Zombie_Movement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        agent.SetDestination(player.transform.position);
+        if (Mathf.Abs(player.transform.position.y - transform.position.y) < 10 && Vector3.Distance(player.transform.position, transform.position) <= 26)
+        {
+            agent.SetDestination(player.transform.position);
+        }
+        else
+            agent.SetDestination(transform.position);
     }
 }

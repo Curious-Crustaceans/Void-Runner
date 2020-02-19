@@ -29,7 +29,7 @@ public class BulletCollision : MonoBehaviour
             Destroy(gameObject);
         }
         else
-            if (other.tag != "transparent")
+            if (other.tag != "transparent" && other.tag != "Enemy")
         {
             Destroy(gameObject);
         }

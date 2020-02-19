@@ -9,7 +9,7 @@ public class EnemyDMG : MonoBehaviour
     public int enemy_health;
 
     void Awake() {
-    	enemy_health = 3;
+    	
     }
 
     public void TakeDMG(int dmg) {

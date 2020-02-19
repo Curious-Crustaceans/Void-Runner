@@ -6,7 +6,7 @@ public class Boss_Move : StateMachineBehaviour
 {
     public float speed = 2.5f;
     public float spray_range = 12f;
-
+    bool run = false;
     bool flop = false;
     Transform player;
     Rigidbody boss_rb;
@@ -21,13 +21,19 @@ public class Boss_Move : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        Vector3 target = new Vector3(player.position.x, boss_rb.position.y, player.position.z);
-        Vector3 newPos = Vector3.MoveTowards(boss_rb.position, target, speed * Time.fixedDeltaTime);
-        boss_rb.MovePosition(newPos);
+        if (Vector3.Distance(player.position, boss_rb.position) <= 12)
+        { run = true; }
+        if (run && Vector3.Distance(player.position, boss_rb.position) <= 20)
+        {
+            Vector3 target = new Vector3(player.position.x, boss_rb.position.y, player.position.z);
+            Vector3 newPos = Vector3.MoveTowards(boss_rb.position, target, speed * Time.fixedDeltaTime);
+            boss_rb.MovePosition(newPos);
 
-        if(Vector3.Distance(player.position, boss_rb.position) <= spray_range){
-            animator.SetTrigger("Spray");
-                             
+            if (Vector3.Distance(player.position, boss_rb.position) <= spray_range)
+            {
+                animator.SetTrigger("Spray");
+
+            }
         }
 
     }
