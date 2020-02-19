@@ -7,16 +7,21 @@ public class PlayerDMG : MonoBehaviour
 {
     // Start is called before the first frame update
     
-    public int player_health;
-    int player_starting_health = 5;
+    public float player_health;
+    float player_starting_health = 5;
+    public float inv;
+    float lastDamage;
 
     void Awake() {
     	player_health = player_starting_health;
     }
 
-    public void TakeDMG(int dmg) {
-    	player_health = player_health - dmg;
-        
+    public void TakeDMG(float dmg)
+    {
+        if (Time.time - lastDamage >= inv) { 
+        player_health -= dmg;
+        lastDamage = Time.time;
+    }
     }
 
     void Update(){

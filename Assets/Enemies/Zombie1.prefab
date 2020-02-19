@@ -1984,6 +1984,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 863ebbd8ca4d2457ba5e5075e9c10831, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ZombieDamage: 1
   agent: {fileID: 7187794307345206585}
 --- !u!195 &7187794307345206585
 NavMeshAgent:
@@ -2015,7 +2016,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6425254646924029089}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.27095726
   m_Height: 1.8891304

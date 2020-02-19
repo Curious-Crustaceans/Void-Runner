@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class Zombie_Movement : MonoBehaviour
 {
+    public float ZombieDamage;
     public NavMeshAgent agent;
     GameObject player;
     // Start is called before the first frame update
@@ -23,4 +24,15 @@ public class Zombie_Movement : MonoBehaviour
         else
             agent.SetDestination(transform.position);
     }
-}
+    private void OnTriggerEnter(Collider other)
+    {
+
+
+
+        if (other.tag == "Player")
+        {
+            other.gameObject.GetComponent<PlayerDMG>().TakeDMG(ZombieDamage);
+            
+        }
+    }
+    }
