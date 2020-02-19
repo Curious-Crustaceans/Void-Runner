@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1536870378317479155}
   - component: {fileID: 1536870378317479154}
   - component: {fileID: 1536870378317479153}
+  - component: {fileID: -2707091518750617419}
   - component: {fileID: 1536870378317479152}
   - component: {fileID: 1536870378317479167}
   - component: {fileID: 1536870378317479166}
@@ -82,6 +83,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &-2707091518750617419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536870378317479165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43437dc93d517485db94346ce4bc3dd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player_health: 0
 --- !u!136 &1536870378317479152
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -142,4 +156,5 @@ MonoBehaviour:
     type: 3}
   reload_time: 0.5
   bullet_speed: 30
-  offset: 1
+  player_dmg: 0
+  momentum: 1
