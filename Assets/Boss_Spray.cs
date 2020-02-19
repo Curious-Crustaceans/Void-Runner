@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class Boss_Spray : StateMachineBehaviour
 {
+    public int bullets = 10;
     public float spray_range = 12f;
+    public GameObject bullet;
+    public float bullet_speed = 10f;
+    public float recoil_time = 0.5f;
 
+    float lastFired = 0;
     Transform player;
     Rigidbody boss_rb;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
@@ -23,6 +28,13 @@ public class Boss_Spray : StateMachineBehaviour
         {
             animator.SetTrigger("Exit_Spray");
         }
+
+        if(Time.time - lastFired > recoil_time){
+            Fire();
+            lastFired = Time.time;
+        }
+        
+
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
@@ -31,4 +43,17 @@ public class Boss_Spray : StateMachineBehaviour
         animator.ResetTrigger("Exit_Spray");
     }
 
+
+    void Fire(){
+        float step = 2 * Mathf.PI / bullets;
+        float pos = step;
+        for (int i = 0; i < bullets; i++){
+            Vector3 direction = new Vector3(Mathf.Cos(pos), 0, Mathf.Sin(pos));
+            Vector3 start = boss_rb.position + 2.5f * direction;
+            start.y = 0.6f; //typical height of the player - half height
+            var active_bullet = Instantiate(bullet, start, Quaternion.identity);
+            active_bullet.GetComponent<Rigidbody>().velocity = direction * bullet_speed;
+            pos += step;
+        }
+    }
 }

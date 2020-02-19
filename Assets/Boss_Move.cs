@@ -5,8 +5,9 @@ using UnityEngine;
 public class Boss_Move : StateMachineBehaviour
 {
     public float speed = 2.5f;
-    public float spray_range = 100f;
+    public float spray_range = 12f;
 
+    bool flop = false;
     Transform player;
     Rigidbody boss_rb;
 
@@ -26,6 +27,7 @@ public class Boss_Move : StateMachineBehaviour
 
         if(Vector3.Distance(player.position, boss_rb.position) <= spray_range){
             animator.SetTrigger("Spray");
+                             
         }
 
     }
