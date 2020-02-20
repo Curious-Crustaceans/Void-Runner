@@ -13,6 +13,18 @@ public class Movement : MonoBehaviour
     int dir = 1;
     public Camera cam;
     Vector3 goalV;
+    bool hit0 = true;
+    string void_switch = "RT";
+
+    void Start()
+    {
+        if (Application.platform == RuntimePlatform.WindowsPlayer || Application.platform == RuntimePlatform.WindowsEditor)
+        {
+            void_switch = "RT_Wind";
+        }
+    }
+
+
     void Awake()
     {
 
@@ -25,8 +37,9 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKeyDown("space") || (Input.GetAxis(void_switch) > 0.99 && hit0))
         {
+            hit0 = false;
             print(dir);
             Shift(dir);
             dir *= -1;
@@ -44,6 +57,10 @@ public class Movement : MonoBehaviour
         }
         else
             canMove = true;
+
+        if(Input.GetAxis("RT") < 0.1){
+            hit0 = true;
+        }
        
         
 
