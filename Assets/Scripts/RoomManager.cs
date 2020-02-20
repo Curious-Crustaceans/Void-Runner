@@ -96,7 +96,10 @@ public class RoomManager : MonoBehaviour
     {
         foreach (GameObject enemy in roomEnemies)
         {
-            enemy.GetComponent<EnemyMind>().setActive(x);
+            if (enemy != null)
+            {
+                enemy.GetComponent<EnemyMind>().setActive(x);
+            }
         }
     }
     void voidEnemies(bool x)
@@ -113,6 +116,7 @@ public class RoomManager : MonoBehaviour
         {
             active = true;
             closeDoors();
+            activateEnemies(true);
             
         }
         

@@ -200,6 +200,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player_health: 0
+  inv: 0.25
 --- !u!1001 &1988301887
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -207,6 +208,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2707091518750617419, guid: 91daad0052fff014c854251a3aa04106,
+        type: 3}
+      propertyPath: player_health
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1536870378317479155, guid: 91daad0052fff014c854251a3aa04106,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -267,6 +273,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1536870378317479166, guid: 91daad0052fff014c854251a3aa04106,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 1536870378317479167, guid: 91daad0052fff014c854251a3aa04106,
         type: 3}
       propertyPath: cam
@@ -285,7 +296,17 @@ PrefabInstance:
     - target: {fileID: 7394571284142410351, guid: 91daad0052fff014c854251a3aa04106,
         type: 3}
       propertyPath: momentum
-      value: 0.02
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 7394571284142410351, guid: 91daad0052fff014c854251a3aa04106,
+        type: 3}
+      propertyPath: player_dmg
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7394571284142410351, guid: 91daad0052fff014c854251a3aa04106,
+        type: 3}
+      propertyPath: reload_time
+      value: 0.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91daad0052fff014c854251a3aa04106, type: 3}

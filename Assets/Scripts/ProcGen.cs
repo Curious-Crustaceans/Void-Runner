@@ -81,7 +81,7 @@ public class ProcGen : MonoBehaviour
                     break;
                 }
         }
-            Debug.Log("fail");
+            
         }
     }
 

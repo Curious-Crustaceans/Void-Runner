@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyDMG : MonoBehaviour
+public class EnemyDMG : EnemyMind
 {
     // Start is called before the first frame update
     
@@ -13,9 +13,9 @@ public class EnemyDMG : MonoBehaviour
     }
 
     public void TakeDMG(int dmg) {
+       
     	enemy_health = enemy_health - dmg;
-        Debug.Log("DMG for:");
-        Debug.Log(dmg.ToString());
+     
     }
 
     void Update(){

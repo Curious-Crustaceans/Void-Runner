@@ -8,7 +8,7 @@ public class Enemy_Shoot : EnemyMind
     GameObject target;
     public GameObject point;
     public float damping = 1;
-    Transform t1;
+  
     Transform origin;
     public GameObject bullet;
     public float bullet_speed = 3f;
@@ -17,21 +17,23 @@ public class Enemy_Shoot : EnemyMind
     float lastfired = 0;
     public float recoilTime = 3;
     bool close = false;
+    RaycastHit hit;
   
 
     void Start()
     {
         
         target = GameObject.Find("Player");
-        t1 = target.transform;
-        origin = GetComponent<Transform>();
+        active = false;
+        
+        
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
         close = CheckClose();
-        if (close || locked)
+        if ((close || locked)&& active)
         {
             point.SetActive(true);
             lookAt(target.transform);
@@ -59,7 +61,7 @@ public class Enemy_Shoot : EnemyMind
         {
             Vector3 direction = transform.forward;
             direction.y = 0;
-            Vector3 start = direction.normalized + origin.position;
+            Vector3 start = direction.normalized + point.transform.position;
             start.y = 1.2f;
             direction = direction.normalized * bullet_speed;
             EnemyFire(direction, start);
@@ -88,9 +90,25 @@ public class Enemy_Shoot : EnemyMind
     }
 
     bool CheckClose(){
-        Vector3 distance = t1.position - origin.position;
-        float length = Mathf.Abs(distance.magnitude);
-        return length < 12f;
+
+        
+        Vector3 origin = transform.position;
+        origin.y = 1;
+        var rayDirection = target.transform.position - transform.position;
+        rayDirection.y = 0;
+       
+
+        if (Physics.Raycast(origin, rayDirection, out hit, 20f)){
+            
+            if (hit.transform.gameObject == target)
+            {
+         
+                //Vector3 distance = t1.position - origin.position;
+                //float length = Mathf.Abs(distance.magnitude);
+                return true;
+            }
+        }
+        return false;
     }
 
    

@@ -221,6 +221,7 @@ GameObject:
   - component: {fileID: 1543075040063742608}
   - component: {fileID: 1623326943755553532}
   - component: {fileID: 2256829495223065413}
+  - component: {fileID: 3344535044865227727}
   m_Layer: 0
   m_Name: Turret
   m_TagString: Enemy
@@ -285,11 +286,25 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4104191642607431615}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 0.97700596, z: 3.7360961}
   m_Center: {x: 0, y: 2.2647524, z: 0.7472521}
+--- !u!114 &3344535044865227727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4104191642607431615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f8d3068799594e408c99474778e789d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 0
+  dimVoid: 0
 --- !u!1001 &2709168221786815598
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -301,6 +316,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Red_light
+      objectReference: {fileID: 0}
+    - target: {fileID: 3506298387056138705, guid: b4d0e59c51d1af740940ad69937abced,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3506298387056138711, guid: b4d0e59c51d1af740940ad69937abced,
         type: 3}
