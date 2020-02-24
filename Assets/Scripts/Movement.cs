@@ -58,7 +58,7 @@ public class Movement : MonoBehaviour
         else
             canMove = true;
 
-        if(Input.GetAxis("RT") < 0.1){
+        if(Input.GetAxis(void_switch) < 0.1){
             hit0 = true;
         }
        
