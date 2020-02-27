@@ -95,7 +95,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43437dc93d517485db94346ce4bc3dd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player_health: 0
+  player_health: 5
+  inv: 0
+  healthBar: {fileID: 0}
 --- !u!136 &1536870378317479152
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -138,7 +140,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 80
   m_CollisionDetection: 2
 --- !u!114 &7394571284142410351
 MonoBehaviour:
@@ -154,7 +156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player_bullet: {fileID: 7122332505377179295, guid: 442ec5ca47c8746f8934acb3e73d2d6b,
     type: 3}
-  reload_time: 0.5
-  bullet_speed: 30
-  player_dmg: 0
-  momentum: 1
+  reload_time: 0.3
+  bullet_speed: 10
+  player_dmg: 1
+  momentum: 0.05
