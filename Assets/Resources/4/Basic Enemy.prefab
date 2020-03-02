@@ -238,7 +238,7 @@ MonoBehaviour:
   door: {fileID: 6141491569892487854}
   doorS: {fileID: 1084405856184322714}
   doorW: {fileID: 3253000321070383436}
-  player: {fileID: 1536870378317479165, guid: 91daad0052fff014c854251a3aa04106, type: 3}
+  zombie: {fileID: 6425254646924029089, guid: 0484572695afdde4d946ff5bbb9295cc, type: 3}
 --- !u!65 &6563160172802674697
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1293,6 +1293,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8820145441423870518}
+  - component: {fileID: 5050221276061404799}
+  - component: {fileID: 5970783062262139477}
   m_Layer: 0
   m_Name: Void
   m_TagString: Untagged
@@ -1397,6 +1399,34 @@ Transform:
   m_Father: {fileID: 6170401820500858090}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5050221276061404799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8970042200826319450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81d87f28b7fc18848a98895baa406f69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxZombs: 3
+  zombie: {fileID: 6425254646924029089, guid: 0484572695afdde4d946ff5bbb9295cc, type: 3}
+  player: {fileID: 1536870378317479165, guid: 91daad0052fff014c854251a3aa04106, type: 3}
+--- !u!65 &5970783062262139477
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8970042200826319450}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 27, y: 5, z: 27}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &90614539857886022
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1534,15 +1564,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6764dc569b8cf264c900208a00f115d7, type: 3}
---- !u!4 &4713745898444900947 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4857806420724903562, guid: 6764dc569b8cf264c900208a00f115d7,
-    type: 3}
-  m_PrefabInstance: {fileID: 144383297662231769}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1084405856184322714 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 940239368487988803, guid: 6764dc569b8cf264c900208a00f115d7,
+    type: 3}
+  m_PrefabInstance: {fileID: 144383297662231769}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4713745898444900947 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4857806420724903562, guid: 6764dc569b8cf264c900208a00f115d7,
     type: 3}
   m_PrefabInstance: {fileID: 144383297662231769}
   m_PrefabAsset: {fileID: 0}

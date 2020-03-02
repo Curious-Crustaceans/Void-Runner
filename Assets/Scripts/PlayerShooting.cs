@@ -61,6 +61,6 @@ public class PlayerShooting : MonoBehaviour
         shootDir = shootDir.normalized;
 
         var active_bullet = Instantiate(player_bullet, player_pos, Quaternion.identity);
-        active_bullet.GetComponent<Rigidbody>().velocity = (shootDir + gameObject.GetComponent<Rigidbody>().velocity * momentum) * bullet_speed;
+        active_bullet.GetComponent<Rigidbody>().velocity = (shootDir + gameObject.GetComponent<Rigidbody>().velocity * momentum).normalized * bullet_speed;
     }
 }
