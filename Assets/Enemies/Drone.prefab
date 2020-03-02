@@ -96,7 +96,7 @@ MonoBehaviour:
   bullet: {fileID: 3410436837326743179, guid: 7ebfd9009e0894416aabbe9a0bab2f11, type: 3}
   lead: 1
   bullets: 10
-  bulletSpeed: 5
+  bulletSpeed: 10
 --- !u!114 &8847196727599576304
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -9,7 +9,7 @@ public class ProcGen : MonoBehaviour
 {
     
     public int levelSize;
-    public int minDistance;
+   
     
     Vector3 [,] dungeon =  new Vector3[21,21];
     
