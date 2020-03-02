@@ -10,7 +10,6 @@ public class PlayerBulletCollision : MonoBehaviour
     // Start is called before the first frame update
     void Start(){
     	player = GameObject.Find("Player");
-        bulletDMG = player.GetComponent<PlayerShooting>().player_dmg;
     }
     
 
