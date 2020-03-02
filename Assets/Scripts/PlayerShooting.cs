@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class PlayerShooting : MonoBehaviour
 {
-
-
+    public GameObject second_bullet;
     public GameObject player_bullet;
     public float reload_time = 0.5f;
     public float bullet_speed = 10f;
-    public int player_dmg;
-    int starting_damage = 1;
+    public float player_dmg;
+    float starting_damage = 1;
     float last_fired;
     public float momentum = 0.02f;
     float v;
@@ -19,6 +18,7 @@ public class PlayerShooting : MonoBehaviour
     float h_cont;
     string aim_horz = "RightJoyStickX";
     string aim_vert = "RightJoyStickY";
+    public bool second;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +28,7 @@ public class PlayerShooting : MonoBehaviour
             aim_horz = "RightJoyStickX_Wind";
             aim_vert = "RightJoyStickY_Wind";
         }
+        second = false;
     }
 
     // Update is called once per frame
@@ -52,6 +53,15 @@ public class PlayerShooting : MonoBehaviour
             }
         }
     }
+    
+
+    public void setSecond(){
+        second = true;
+    }
+
+    public void Upgrade(){
+        player_dmg += 0.5f;
+    }
 
     void Fire(float h, float v)
     {
@@ -59,8 +69,14 @@ public class PlayerShooting : MonoBehaviour
 
         Vector3 shootDir = new Vector3(h, 0, v);
         shootDir = shootDir.normalized;
-
-        var active_bullet = Instantiate(player_bullet, player_pos, Quaternion.identity);
-        active_bullet.GetComponent<Rigidbody>().velocity = (shootDir + gameObject.GetComponent<Rigidbody>().velocity * momentum) * bullet_speed;
+        if(second){
+            var active_bullet = Instantiate(second_bullet, player_pos, Quaternion.identity);
+            active_bullet.GetComponent<Rigidbody>().velocity = (shootDir + gameObject.GetComponent<Rigidbody>().velocity * momentum) * bullet_speed;
+        }
+        else
+        {
+            var active_bullet = Instantiate(player_bullet, player_pos, Quaternion.identity);
+            active_bullet.GetComponent<Rigidbody>().velocity = (shootDir + gameObject.GetComponent<Rigidbody>().velocity * momentum) * bullet_speed;
+        }
     }
 }

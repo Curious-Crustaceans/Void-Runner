@@ -154,9 +154,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 843dbf4cec0844236a2772ddbd8ee7e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  second_bullet: {fileID: 7122332505377179295, guid: fcbd413ee283a4208b37ecda3ab91536,
+    type: 3}
   player_bullet: {fileID: 7122332505377179295, guid: 442ec5ca47c8746f8934acb3e73d2d6b,
     type: 3}
   reload_time: 0.3
   bullet_speed: 10
   player_dmg: 1
   momentum: 0.05
+  second: 0
