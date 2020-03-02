@@ -15,9 +15,11 @@ GameObject:
   - component: {fileID: 8300430779404931767}
   - component: {fileID: 8300430779404931788}
   - component: {fileID: 8804241409034524981}
+  - component: {fileID: 362103016910024837}
+  - component: {fileID: -7035042853549721607}
   m_Layer: 0
   m_Name: Charge_Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -142,5 +144,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4c8b931b77cb4e37a226bbd768fc710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  active: 0
+  dimVoid: 0
   attacks: 0
   collided: 0
+--- !u!114 &362103016910024837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8300430779404931765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f8d3068799594e408c99474778e789d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 0
+  dimVoid: 0
+--- !u!114 &-7035042853549721607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8300430779404931765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f8efabe711579f4e81db2078ffa3081, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 0
+  dimVoid: 0
+  enemy_health: 15
