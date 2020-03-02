@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 
 public class RoomManager : MonoBehaviour
@@ -12,9 +13,13 @@ public class RoomManager : MonoBehaviour
     public GameObject door;
     public GameObject doorS;
     public GameObject doorW;
-    public GameObject player;
+    GameObject player;
+    public GameObject zombie;
     private List<GameObject> roomEnemies = new List<GameObject>();
+    int zombCount = 0;
     private bool alive = false;
+    private bool flip = true;
+    Transform position;
     void Update()
     {
         
@@ -23,6 +28,8 @@ public class RoomManager : MonoBehaviour
 
         if (active)
         {
+           
+            
             alive = false;
             foreach (GameObject enemy in roomEnemies)
             { if (enemy != null)
@@ -39,6 +46,7 @@ public class RoomManager : MonoBehaviour
 
     public void init(string doorArray)
     {
+        flip = true;
         if (doorArray[2] == '1')
         {
             doors.Add(doorN);
@@ -63,12 +71,13 @@ public class RoomManager : MonoBehaviour
             if (child.tag == "Enemy")
                 roomEnemies.Add(child.gameObject);
         }
+        player = GameObject.Find("Player");
         openDoorsInitial();
      
 
 
     }
-
+    
     void closeDoors()
     {
         foreach (GameObject door in doors)

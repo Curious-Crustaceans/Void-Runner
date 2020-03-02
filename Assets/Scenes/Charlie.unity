@@ -179,7 +179,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelSize: 10
-  minDistance: 0
   spawn: {fileID: 4307830257013270701, guid: d25d8d0bb0e284742a8d5eaacdeb662a, type: 3}
 --- !u!1 &252373417
 GameObject:

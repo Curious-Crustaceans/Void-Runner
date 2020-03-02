@@ -307,7 +307,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21758681037435d4e8a4127458c7b9e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+
   levelSize: 10
+
   spawn: {fileID: 4307830257013270701, guid: d25d8d0bb0e284742a8d5eaacdeb662a, type: 3}
 --- !u!1 &726790689 stripped
 GameObject:

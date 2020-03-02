@@ -979,6 +979,7 @@ MonoBehaviour:
   doorS: {fileID: 1478815910133369305}
   doorW: {fileID: 3939982080442335759}
   player: {fileID: 1536870378317479165, guid: 91daad0052fff014c854251a3aa04106, type: 3}
+  zombie: {fileID: 6425254646924029089, guid: 0484572695afdde4d946ff5bbb9295cc, type: 3}
 --- !u!65 &3287791713857432693
 BoxCollider:
   m_ObjectHideFlags: 0

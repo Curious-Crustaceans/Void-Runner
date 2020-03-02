@@ -128,7 +128,7 @@ public class ProcGen : MonoBehaviour
                 if (dungeon[k, l].x == 3)
                 {
 
-                    GameObject newRoom = Instantiate((GameObject)Boss[0], new Vector3((l - 11) * 36, 0, (k - 11) * 36), Quaternion.identity);
+                    GameObject newRoom = Instantiate((GameObject)Boss[Random.Range(0, Boss.Length)], new Vector3((l - 11) * 36, 0, (k - 11) * 36), Quaternion.identity);
                     int bits = (int)dungeon[k, l].z;
 
                     string doorArray = Convert.ToString(bits, 10);
