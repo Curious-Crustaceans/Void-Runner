@@ -12,7 +12,7 @@ public class Charge_Handler : MonoBehaviour
     void Start()
     {
         collided = false;
-        playerScript = GameObject.Find("Capsule").GetComponent<PlayerDMG>();
+        playerScript = GameObject.Find("Player").GetComponent<PlayerDMG>();
     }
 
     // Update is called once per frame
