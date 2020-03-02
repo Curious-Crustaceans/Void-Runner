@@ -59,6 +59,9 @@ public class PlayerShooting : MonoBehaviour
         second = true;
     }
 
+    public float getDamage()
+    { return player_dmg; }
+
     public void Upgrade(){
         player_dmg += 0.5f;
     }

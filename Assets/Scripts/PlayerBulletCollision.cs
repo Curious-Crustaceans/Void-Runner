@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class PlayerBulletCollision : MonoBehaviour
 {
-	public int bulletDMG;
+	float bulletDMG;
     GameObject player;
 	
     // Start is called before the first frame update
     void Start(){
     	player = GameObject.Find("Player");
+        bulletDMG = player.GetComponent<PlayerShooting>().getDamage();
     }
     
 
