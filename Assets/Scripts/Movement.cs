@@ -40,7 +40,6 @@ public class Movement : MonoBehaviour
         if (Input.GetKeyDown("space") || (Input.GetAxis(void_switch) > 0.99 && hit0))
         {
             hit0 = false;
-          
             Shift(dir);
             dir *= -1;
             canMove = false;

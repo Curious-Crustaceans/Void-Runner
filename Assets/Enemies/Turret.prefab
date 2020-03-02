@@ -277,6 +277,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f8efabe711579f4e81db2078ffa3081, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  active: 0
+  dimVoid: 0
   enemy_health: 3
 --- !u!65 &2256829495223065413
 BoxCollider:

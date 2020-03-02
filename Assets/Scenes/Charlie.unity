@@ -711,6 +711,11 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1754075092}
+    - target: {fileID: -2707091518750617419, guid: 91daad0052fff014c854251a3aa04106,
+        type: 3}
+      propertyPath: inv
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1536870378317479155, guid: 91daad0052fff014c854251a3aa04106,
         type: 3}
       propertyPath: m_LocalPosition.x

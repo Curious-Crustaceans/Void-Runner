@@ -13,6 +13,7 @@ public class PlayerDMG : MonoBehaviour
     public float inv;
     float lastDamage;
     public HealthBar healthBar;
+
     
 
     void Awake() {
@@ -25,11 +26,56 @@ public class PlayerDMG : MonoBehaviour
         if (Time.time - lastDamage >= inv) { 
         player_health -= dmg;
         lastDamage = Time.time;
-        
         healthBar.SetHealth(player_health);
+        StartCoroutine(Flasher(inv));
+    }
+
+    IEnumerator Flasher(float inv) 
+    {
+        int flashes = 3;
+        float wait = inv/(flashes*2);
+        for (int i = 0; i < flashes; i++)
+        {
+            GetComponent<Renderer>().enabled = false;
+            yield return new WaitForSeconds(wait);
+            GetComponent<Renderer>().enabled = true;
+            yield return new WaitForSeconds(wait);
+        }
+        
     }
 
     }
+
+    public void GainDMG(float dmg)
+    {
+        player_health += dmg;
+        if(player_health > player_starting_health){
+            player_health = player_starting_health;
+        }
+        healthBar.SetHealth(player_health);
+        StartCoroutine(Flasher(inv));
+
+        IEnumerator Flasher(float inv)
+        {
+            int flashes = 3;
+            float wait = inv / (flashes * 2);
+            for (int i = 0; i < flashes; i++)
+            {
+                GetComponent<Renderer>().enabled = false;
+                yield return new WaitForSeconds(wait);
+                GetComponent<Renderer>().enabled = true;
+                yield return new WaitForSeconds(wait);
+            }
+
+        }
+
+    }
+
+    public bool FullHealth(){
+        return Mathf.Abs(player_health - player_starting_health) < 0.001;
+    }
+
+
 
     void Update(){
     	if (player_health <= 0) {
