@@ -2260,6 +2260,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Turret
       objectReference: {fileID: 0}
+    - target: {fileID: 8594513478491818093, guid: 3ce544357a5ad49b294756e9871fd321,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8594513478491818093, guid: 3ce544357a5ad49b294756e9871fd321,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ce544357a5ad49b294756e9871fd321, type: 3}
 --- !u!4 &3084286266822318049 stripped
@@ -3268,6 +3278,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5632016995771406249}
     m_Modifications:
+    - target: {fileID: 3948024581956805291, guid: d7aedc82e9310a040bf1ddbb2b22fe4e,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3948024581956805291, guid: d7aedc82e9310a040bf1ddbb2b22fe4e,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6388246839625477285, guid: d7aedc82e9310a040bf1ddbb2b22fe4e,
         type: 3}
       propertyPath: m_Name
@@ -3996,6 +4016,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5632016995771406249}
     m_Modifications:
+    - target: {fileID: 3948024581956805291, guid: d7aedc82e9310a040bf1ddbb2b22fe4e,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3948024581956805291, guid: d7aedc82e9310a040bf1ddbb2b22fe4e,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6388246839625477285, guid: d7aedc82e9310a040bf1ddbb2b22fe4e,
         type: 3}
       propertyPath: m_Name
@@ -4521,7 +4551,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_NavMeshData
       value: 
-      objectReference: {fileID: 23800000, guid: 26a76a2310284cd4d820315c3ca9d509,
+      objectReference: {fileID: 23800000, guid: ae73380f1262b2243bb60b1cf5bb05c4,
         type: 2}
     - target: {fileID: 5765548665949011117, guid: 0a7d275daa1055f4b9d0c46cb87d6c89,
         type: 3}
@@ -10464,6 +10494,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5632016995771406249}
     m_Modifications:
+    - target: {fileID: 3948024581956805291, guid: d7aedc82e9310a040bf1ddbb2b22fe4e,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3948024581956805291, guid: d7aedc82e9310a040bf1ddbb2b22fe4e,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6388246839625477285, guid: d7aedc82e9310a040bf1ddbb2b22fe4e,
         type: 3}
       propertyPath: m_Name
@@ -11753,6 +11793,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5632016995771406249}
     m_Modifications:
+    - target: {fileID: 3948024581956805291, guid: d7aedc82e9310a040bf1ddbb2b22fe4e,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3948024581956805291, guid: d7aedc82e9310a040bf1ddbb2b22fe4e,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6388246839625477285, guid: d7aedc82e9310a040bf1ddbb2b22fe4e,
         type: 3}
       propertyPath: m_Name

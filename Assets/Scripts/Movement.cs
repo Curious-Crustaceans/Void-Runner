@@ -79,6 +79,8 @@ public class Movement : MonoBehaviour
 
     void Shift(int dir)
     {
+
+
         if (dir == 1)
         {
             transf.SetPositionAndRotation(transform.position + new Vector3(0, -50, 0), transf.rotation);
