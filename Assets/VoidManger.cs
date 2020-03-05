@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class VoidManger : MonoBehaviour
 {
     int zombCount = 0;
-    public int maxZombs = 3;
+    public float maxZombs = 3;
     Vector2 position;
     RaycastHit hit;
    
@@ -27,9 +27,12 @@ public class VoidManger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+       
         if (other.tag == "Player" && zombCount < maxZombs)
         {
-            spawnZombie();
+
+            for (int i = 0; i < player.GetComponent<PlayerItems>().zombs; i++)
+            { spawnZombie(); }
             zombCount += 1;
 
         }

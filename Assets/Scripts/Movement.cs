@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    public float speed = 10f;            // The speed that the player will move at.
+    
 
    
     bool canMove = true;
@@ -15,6 +15,9 @@ public class Movement : MonoBehaviour
     Vector3 goalV;
     bool hit0 = true;
     string void_switch = "RT";
+    float speed;
+    
+
 
     void Start()
     {
@@ -22,6 +25,7 @@ public class Movement : MonoBehaviour
         {
             void_switch = "RT_Wind";
         }
+     
     }
 
 
@@ -66,6 +70,7 @@ public class Movement : MonoBehaviour
     }
     void FixedUpdate()
     {
+        speed = gameObject.GetComponent<PlayerItems>().speed;
         Move(goalV);
     }
 
@@ -74,7 +79,7 @@ public class Movement : MonoBehaviour
      
 
        
-        playerRigidbody.AddForce((goal_velocity*10 -playerRigidbody.velocity)*speed);
+        playerRigidbody.AddForce((goal_velocity*speed -playerRigidbody.velocity)*15);
     }
 
     void Shift(int dir)

@@ -2,14 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerShooting : MonoBehaviour
+public class PlayerShooting : PlayerItems
 {
-    public GameObject second_bullet;
+
     public GameObject player_bullet;
-    public float reload_time = 0.5f;
-    public float bullet_speed = 10f;
-    public float player_dmg;
-    float starting_damage = 1;
     float last_fired;
     public float momentum = 0.02f;
     float v;
@@ -18,23 +14,30 @@ public class PlayerShooting : MonoBehaviour
     float h_cont;
     string aim_horz = "RightJoyStickX";
     string aim_vert = "RightJoyStickY";
-    public bool second;
+    //float shotsPerSecond, shotSpeed, damage, burst, spread;
+
     // Start is called before the first frame update
     void Start()
     {
-        player_dmg = starting_damage;
 
-        if(Application.platform == RuntimePlatform.WindowsPlayer || Application.platform == RuntimePlatform.WindowsEditor){
+
+        if (Application.platform == RuntimePlatform.WindowsPlayer || Application.platform == RuntimePlatform.WindowsEditor)
+        {
             aim_horz = "RightJoyStickX_Wind";
             aim_vert = "RightJoyStickY_Wind";
         }
-        second = false;
+        //shotsPerSecond = GetComponent<PlayerItems>().shotsPerSecond;
+        //shotSpeed = GetComponent<PlayerItems>().shotSpeed;
+        //damage = GetComponent<PlayerItems>().damage;
+        //burst = GetComponent<PlayerItems>().burst;
+        //spread = GetComponent<PlayerItems>().shotsPerSecond;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Time.time - last_fired >= reload_time)
+        if ((Time.time - last_fired) >= 1 / shotsPerSecond)
         {
             v = Input.GetAxisRaw("FireV");
             h = Input.GetAxisRaw("FireH");
@@ -45,26 +48,21 @@ public class PlayerShooting : MonoBehaviour
             if (v != 0 | h != 0)
             {
                 last_fired = Time.time;
-                Fire(h, v);
+                StartCoroutine(Firing(h, v));
             }
-            else if(Mathf.Abs(v_cont) > 0 || Mathf.Abs(h_cont) > 0){
+            else if (Mathf.Abs(v_cont) > 0 || Mathf.Abs(h_cont) > 0)
+            {
                 last_fired = Time.time;
-                Fire(h_cont, v_cont);
+                StartCoroutine(Firing(h_cont, v_cont));
             }
         }
     }
-    
 
-    public void setSecond(){
-        second = true;
-    }
 
-    public float getDamage()
-    { return player_dmg; }
 
-    public void Upgrade(){
-        player_dmg += 0.5f;
-    }
+
+
+
 
     void Fire(float h, float v)
     {
@@ -74,16 +72,19 @@ public class PlayerShooting : MonoBehaviour
         shootDir = shootDir.normalized;
 
 
-        if(second){
-            var active_bullet = Instantiate(second_bullet, player_pos, Quaternion.identity);
-            active_bullet.GetComponent<Rigidbody>().velocity = (shootDir + gameObject.GetComponent<Rigidbody>().velocity * momentum) * bullet_speed;
-        }
-        else
-        {
-            var active_bullet = Instantiate(player_bullet, player_pos, Quaternion.identity);
-            active_bullet.GetComponent<Rigidbody>().velocity = (shootDir + gameObject.GetComponent<Rigidbody>().velocity * momentum) * bullet_speed;
-        }
 
+        var active_bullet = Instantiate(player_bullet, player_pos, Quaternion.identity);
+        active_bullet.GetComponent<Rigidbody>().velocity = (shootDir + gameObject.GetComponent<Rigidbody>().velocity * momentum) * shotSpeed;
+        active_bullet.GetComponent<PlayerBulletCollision>().bulletDMG = damage;
+    }
+
+    IEnumerator Firing(float h, float v)
+    {
+        for (int i = 0; i < burst; i++)
+        {
+            Fire(h, v);
+            yield return new WaitForSeconds(.05f);
+        }
 
     }
 }

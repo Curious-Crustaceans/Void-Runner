@@ -16,10 +16,10 @@ public class RoomManager : MonoBehaviour
     GameObject player;
     public GameObject zombie;
     private List<GameObject> roomEnemies = new List<GameObject>();
-    int zombCount = 0;
+    
     private bool alive = false;
     private bool flip = true;
-    Transform position;
+    
     void Update()
     {
         
@@ -46,7 +46,7 @@ public class RoomManager : MonoBehaviour
 
     public void init(string doorArray)
     {
-        flip = true;
+       
         if (doorArray[2] == '1')
         {
             doors.Add(doorN);
