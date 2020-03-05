@@ -111,7 +111,7 @@ MonoBehaviour:
   - delay
   amount:
   - 0.2
-  - 7
+  - 5
   ItemName: Irradiated Milk
   FlavorText: Spray N' Pray!
 --- !u!111 &-3919869305634050036

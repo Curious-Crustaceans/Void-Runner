@@ -45,9 +45,11 @@ public class ProcGen : MonoBehaviour
             i += 1;
 
         }
-        SpawnItemRoom();
-        SpawnSpecialRoom();
         SpawnBoss();
+        SpawnSpecialRoom();
+        SpawnItemRoom();
+        
+       
         GenerateLevel();
     }
 
@@ -109,7 +111,7 @@ public class ProcGen : MonoBehaviour
 
 
                 dungeon[x, y].x = 5;
-                IncAdj(x, y,100);
+                IncAdj(x, y, 100);
 
                 break;
 
@@ -126,10 +128,10 @@ public class ProcGen : MonoBehaviour
             int distance = (Mathf.Abs(x - 11) + Mathf.Abs(y - 11));
             if (dungeon[x, y].x == 0 && dungeon[x, y].y == 1) {
                
-                if (Random.Range(0, levelSize) <= distance)
+                if (Random.Range(levelSize/4, levelSize) < distance)
                 {
                     dungeon[x, y].x = 3;
-                    IncAdj(x, y);
+                    IncAdj(x, y, 100);
 
                     break;
                 }

@@ -30,59 +30,63 @@ public class Trooper : EnemyMind
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (agent.speed == 0)
-        { anim.SetBool("Idle", true); }
-        
-        if (!confused)
+        if (active)
         {
-            var rotation = Quaternion.LookRotation(target.transform.position - transform.position);
-            rotation.x = 0;
-            rotation.z = 0;
-            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * 5);
-        }
+            if (agent.speed == 0)
+            { anim.SetBool("Idle", true); }
 
-
-        if (Mathf.Abs(target.transform.position.y - transform.position.y) > 10)
-        {
-            confused = true;
-            }
-
-        if (confused && Mathf.Abs(target.transform.position.y - transform.position.y) < 5)
-        {
-            StartCoroutine(Delay());
-        }
-        if (active && (Mathf.Abs(target.transform.position.y - transform.position.y) < 5) && !locked)
-        {
             if (!confused)
             {
-                agent.SetDestination(target.transform.position);
-                anim.SetBool("Idle", false);
+                var rotation = Quaternion.LookRotation(target.transform.position - transform.position);
+                rotation.x = 0;
+                rotation.z = 0;
+                transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * 5);
+            }
+
+
+            if (Mathf.Abs(target.transform.position.y - transform.position.y) > 10)
+            {
+                confused = true;
+            }
+
+            if (confused && Mathf.Abs(target.transform.position.y - transform.position.y) < 5)
+            {
+                StartCoroutine(Delay());
+            }
+            if ((Mathf.Abs(target.transform.position.y - transform.position.y) < 5) && !locked)
+            {
+                if (!confused)
+                {
+                    agent.SetDestination(target.transform.position);
+                    anim.SetBool("Idle", false);
+                }
+                else
+                {
+                    agent.SetDestination(transform.position);
+                    anim.SetBool("Idle", true);
+                }
+
+                close = CheckClose();
+                if (close && !confused)
+                {
+                    agent.SetDestination(transform.position);
+
+                    StartCoroutine(Firing());
+
+
+
+
+
+                }
+                else
+                    locked = false;
+
+
             }
             else
-            {
                 agent.SetDestination(transform.position);
-                anim.SetBool("Idle", true);
-            }
-
-            close = CheckClose();
-            if (close && !confused)
-            {
-                agent.SetDestination(transform.position);
-
-                StartCoroutine(Firing());
-
-
-
-
-
-            }
-            else
-                locked = false;
-           
-
         }
     }
-
     void Fire()
     {
         float step =   90 / bullets;
@@ -127,7 +131,7 @@ public class Trooper : EnemyMind
         return false;
     }
     IEnumerator Delay()
-    { yield return new WaitForSeconds(1);
+    { yield return new WaitForSeconds(1.5F);
         confused = false;
       
     }
@@ -136,7 +140,7 @@ public class Trooper : EnemyMind
     {
 
         anim.SetBool("Idle", true);
-        yield return new WaitForSeconds(.5F);
+        yield return new WaitForSeconds(1F);
        
         Fire();
       

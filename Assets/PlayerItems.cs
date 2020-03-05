@@ -26,9 +26,9 @@ public class PlayerItems : MonoBehaviour
         if (stat == "spread")
             spread += x;
         if (stat == "delay")
-           shotsPerSecond*= x;
+           delay += x;
         if (stat == "multiplier")
-            damage *= x;
+            multiplier += x;
         if (stat == "zombs")
             zombs += x;
 

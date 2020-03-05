@@ -37,7 +37,7 @@ public class PlayerShooting : PlayerItems
     // Update is called once per frame
     void Update()
     {
-        if ((Time.time - last_fired) >= 1 / shotsPerSecond)
+        if ((Time.time - last_fired) >= 1 / (shotsPerSecond*delay))
         {
             v = Input.GetAxisRaw("FireV");
             h = Input.GetAxisRaw("FireH");
@@ -75,7 +75,7 @@ public class PlayerShooting : PlayerItems
 
         var active_bullet = Instantiate(player_bullet, player_pos, Quaternion.identity);
         active_bullet.GetComponent<Rigidbody>().velocity = (shootDir + gameObject.GetComponent<Rigidbody>().velocity * momentum) * shotSpeed;
-        active_bullet.GetComponent<PlayerBulletCollision>().bulletDMG = damage;
+        active_bullet.GetComponent<PlayerBulletCollision>().bulletDMG = damage*multiplier;
     }
 
     IEnumerator Firing(float h, float v)

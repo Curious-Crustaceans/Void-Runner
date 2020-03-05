@@ -46,7 +46,7 @@ public class VoidManger : MonoBehaviour
             position = Random.insideUnitCircle;
             Physics.Raycast(player.transform.position, new Vector3(position.x, 0, position.y), out hit, 100f);
 
-            if (Mathf.Abs((hit.transform.position - player.transform.position).magnitude) > 3)
+            if (Mathf.Abs((hit.transform.position - player.transform.position).magnitude) > 8)
             {
 
                 var zomb = Instantiate(zombie, hit.transform.position, Quaternion.identity);

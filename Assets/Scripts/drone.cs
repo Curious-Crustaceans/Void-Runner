@@ -31,7 +31,7 @@ public class drone : EnemyMind
        
         anim.SetFloat("velocity", agent.velocity.magnitude);
 
-
+       
                 if (active && (Mathf.Abs(target.transform.position.y - transform.position.y) < 5))
                 {
                     agent.SetDestination(target.transform.position);
@@ -111,7 +111,7 @@ public class drone : EnemyMind
                 direction = direction.normalized * 30;
                 Fire();
                 agent.speed = 8;
-                yield return new WaitForSeconds(Random.Range(2, 5));
+                yield return new WaitForSeconds(Random.Range(3, 6));
             
 
         }
