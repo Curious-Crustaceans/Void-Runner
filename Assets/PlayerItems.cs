@@ -6,7 +6,7 @@ public class PlayerItems : MonoBehaviour
 {
     protected float damage = 1, shotSpeed = 12, shotsPerSecond = 2, burst = 1, spread = 1, delay = 1, multiplier = 1;
     public float speed = 8, zombs = 1;
-    
+
 
     // Start is called before the first frame update
 
@@ -26,18 +26,37 @@ public class PlayerItems : MonoBehaviour
         if (stat == "spread")
             spread += x;
         if (stat == "delay")
-           delay += x;
+            delay *= x;
         if (stat == "multiplier")
-            multiplier += x;
+            multiplier *= x;
         if (stat == "zombs")
             zombs += x;
 
 
     }
 
-    public void onHit(Transform x)
+    public float getDamage()
     {
-        BroadcastMessage("onHit", x);
+        return damage*multiplier;
+    }
+    public float getShotSpeed()
+    {
+        return shotSpeed;
+    }
+    public void onHitBroadcast(GameObject hit)
+    {
+       
+
+        BroadcastMessage("onHit", hit, SendMessageOptions.DontRequireReceiver);
 
     }
+
+    public void onBulletDestroyBroadcast(Vector3  hit)
+    {
+
+
+        BroadcastMessage("onBulletDestroy", hit, SendMessageOptions.DontRequireReceiver);
+
+    }
+
 }

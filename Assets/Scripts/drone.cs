@@ -47,8 +47,7 @@ public class drone : EnemyMind
 
 
                     }
-                    else
-                        locked = false;
+                    
                
         }
     }
@@ -91,8 +90,7 @@ public class drone : EnemyMind
                 return true;
             }
         }
-        locked = false;
-        StopAllCoroutines();
+        
 
         return false;
     }
@@ -101,9 +99,8 @@ public class drone : EnemyMind
     {
         locked = true;
         
-        while (locked)
-        {
-            
+       
+              
                 Vector3 direction = -transform.position + target.transform.position;
                 direction.y = 0;
                 Vector3 start = transform.position;
@@ -111,9 +108,10 @@ public class drone : EnemyMind
                 direction = direction.normalized * 30;
                 Fire();
                 agent.speed = 8;
-                yield return new WaitForSeconds(Random.Range(3, 6));
-            
+        yield return new WaitForSeconds(Random.Range(2, 4));
+        locked = false;
 
-        }
+
+
     }
 }

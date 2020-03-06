@@ -10,7 +10,7 @@ public class PsyTrooper : EnemyMind
     GameObject target;
     RaycastHit hit;
     float range;
-    bool checking = true;
+   
     Vector3 startPosition;
     Animator anim;
     public GameObject bullet;
