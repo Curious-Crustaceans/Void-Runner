@@ -113,7 +113,7 @@ MonoBehaviour:
   amount:
   - 4
   - 20
-  - 3
+  - 0.333
   ItemName: Old Rifle
   FlavorText: One Shot, One Kill!
 --- !u!111 &635561322817305239

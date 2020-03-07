@@ -74,8 +74,10 @@ public class PlayerShooting : PlayerItems
 
 
         var active_bullet = Instantiate(player_bullet, player_pos, Quaternion.identity);
+       
         active_bullet.GetComponent<Rigidbody>().velocity = (shootDir + gameObject.GetComponent<Rigidbody>().velocity * momentum) * shotSpeed;
         active_bullet.GetComponent<PlayerBulletCollision>().bulletDMG = damage*multiplier;
+        onShootBroadcast(active_bullet);
     }
 
     IEnumerator Firing(float h, float v)

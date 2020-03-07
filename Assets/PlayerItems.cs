@@ -43,11 +43,25 @@ public class PlayerItems : MonoBehaviour
     {
         return shotSpeed;
     }
+
+    public float getDPS()
+    {
+        return damage*multiplier*shotsPerSecond*delay ;
+    }
     public void onHitBroadcast(GameObject hit)
     {
        
 
         BroadcastMessage("onHit", hit, SendMessageOptions.DontRequireReceiver);
+
+
+    }
+
+    public void onShootBroadcast(GameObject bullet)
+    {
+
+
+        BroadcastMessage("onShoot", bullet, SendMessageOptions.DontRequireReceiver);
 
     }
 
@@ -59,4 +73,13 @@ public class PlayerItems : MonoBehaviour
 
     }
 
+    public void onShiftBroadcast()
+    {
+        BroadcastMessage("onShift", SendMessageOptions.DontRequireReceiver);
+    }
+
+    public void onKillBroadcast(Vector3 pos)
+    {
+        BroadcastMessage("onKill", pos, SendMessageOptions.DontRequireReceiver);
+    }
 }

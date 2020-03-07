@@ -12,7 +12,7 @@ public class Trooper : EnemyMind
     RaycastHit hit;
     public GameObject bullet;
     private Animator anim;
-    public float lead = 1;
+    
     public int bullets;
     public float bulletSpeed;
     public bool confused = false;
@@ -47,6 +47,8 @@ public class Trooper : EnemyMind
             if (Mathf.Abs(target.transform.position.y - transform.position.y) > 10)
             {
                 confused = true;
+                StopAllCoroutines();
+                locked = false;
             }
 
             if (confused && Mathf.Abs(target.transform.position.y - transform.position.y) < 5)
@@ -69,7 +71,7 @@ public class Trooper : EnemyMind
                 close = CheckClose();
                 if (close && !confused)
                 {
-                    agent.SetDestination(transform.position);
+                    
 
                     StartCoroutine(Firing());
 
@@ -114,7 +116,7 @@ public class Trooper : EnemyMind
         rayDirection.y = 0;
 
 
-        if (Physics.Raycast(origin, rayDirection, out hit, 5f))
+        if (Physics.Raycast(origin, rayDirection, out hit, 8f))
         {
 
             if (hit.transform.gameObject == target)
@@ -140,13 +142,13 @@ public class Trooper : EnemyMind
     {
 
         anim.SetBool("Idle", true);
-        yield return new WaitForSeconds(1F);
+        yield return new WaitForSeconds(.5F);
        
         Fire();
       
         anim.SetBool("Idle", false);
 
-
+        yield return new WaitForSeconds(1F);
 
 
         locked = false;
