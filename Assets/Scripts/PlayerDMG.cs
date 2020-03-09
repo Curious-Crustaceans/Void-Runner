@@ -13,6 +13,7 @@ public class PlayerDMG : MonoBehaviour
     public float inv;
     float lastDamage;
     public HealthBar healthBar;
+    public GameObject gameover;
 
     
 
@@ -79,7 +80,9 @@ public class PlayerDMG : MonoBehaviour
 
     void Update(){
     	if (player_health <= 0) {
-    		SceneManager.LoadScene (SceneManager.GetActiveScene().name);
+    		gameover.SetActive(true);
+            gameObject.SetActive(false);
+
     	}
 
    }
