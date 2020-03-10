@@ -73,6 +73,10 @@ public class PlayerItems : MonoBehaviour
 
     }
 
+    public void SetDamage(float dam){
+        damage = dam;
+    }
+
     public void onShiftBroadcast()
     {
         BroadcastMessage("onShift", SendMessageOptions.DontRequireReceiver);
