@@ -85,6 +85,7 @@ public class Movement : MonoBehaviour
     void Shift(int dir)
     {
 
+        
 
         if (dir == 1)
         {
@@ -96,5 +97,6 @@ public class Movement : MonoBehaviour
             transf.SetPositionAndRotation(transform.position + new Vector3(0, 50, 0), transf.rotation);
             cam.transform.SetPositionAndRotation(cam.transform.position + new Vector3(0, 50, 0), cam.transform.rotation);
         }
+        gameObject.GetComponent<PlayerItems>().onShiftBroadcast();
     }
 }

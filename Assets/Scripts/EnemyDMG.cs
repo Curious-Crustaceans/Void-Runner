@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyDMG : EnemyMind
+public class EnemyDMG : MonoBehaviour
 {
     // Start is called before the first frame update
     
@@ -20,8 +20,11 @@ public class EnemyDMG : EnemyMind
     }
 
     void Update(){
-    	if (enemy_health <= 0)
-    		Destroy(gameObject);
+        if (enemy_health <= 0)
+        {
+            GameObject.Find("Player").GetComponent<PlayerItems>().onKillBroadcast(transform.position);
+            Destroy(gameObject);
+        }
     }
 
 

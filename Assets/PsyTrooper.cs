@@ -41,7 +41,7 @@ public class PsyTrooper : EnemyMind
     IEnumerator run()
     {
         running = true;
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(3f);
         
         while (active)
         {

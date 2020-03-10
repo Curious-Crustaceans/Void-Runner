@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 8804241409034524981}
   - component: {fileID: 362103016910024837}
   - component: {fileID: -7035042853549721607}
+  - component: {fileID: 3177174230439893891}
   m_Layer: 0
   m_Name: Charge_Enemy
   m_TagString: Enemy
@@ -262,6 +263,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 0
   dimVoid: 0
+  DOT: 0
   attacks: 0
   collided: 0
 --- !u!114 &362103016910024837
@@ -278,6 +280,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 0
   dimVoid: 0
+  DOT: 0
 --- !u!114 &-7035042853549721607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -292,8 +295,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 0
   dimVoid: 0
+  DOT: 0
   enemy_health: 15
   enemy_health_bar: {fileID: 5532765748349816913}
+--- !u!135 &3177174230439893891
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8300430779404931765}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.45
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &3570083879280987351
 PrefabInstance:
   m_ObjectHideFlags: 0

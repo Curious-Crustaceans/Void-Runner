@@ -107,11 +107,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats:
-  - shotsPerSecond
+  - damage
   amount:
-  - 1
+  - 0.5
   ItemName: Brain Slug
-  FlavorText: Definitely Symbiotic, Fire Rate Up!
+  FlavorText: Definitely Symbiotic, Damage Up!
 --- !u!111 &7779061346606507562
 Animation:
   m_ObjectHideFlags: 0

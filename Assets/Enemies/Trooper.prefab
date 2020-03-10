@@ -2102,9 +2102,9 @@ GameObject:
   - component: {fileID: 8002262039976350076}
   - component: {fileID: 8002262039985979102}
   - component: {fileID: 8002262039976578395}
-  - component: {fileID: 8002262039976578397}
   - component: {fileID: 8218978385501525020}
   - component: {fileID: 5248749176128527109}
+  - component: {fileID: 7226213654558630715}
   m_Layer: 0
   m_Name: Trooper
   m_TagString: Enemy
@@ -2177,27 +2177,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &8002262039976578397
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8002262039976578396}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31572e4941e6c1f43b3023c57ada4746, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  active: 0
-  dimVoid: 0
-  agent: {fileID: 8002262039976578395}
-  bullet: {fileID: 3410436837326743179, guid: 7ebfd9009e0894416aabbe9a0bab2f11, type: 3}
-  lead: 1
-  bullets: 10
-  bulletSpeed: 10
-  confused: 0
-  point: {fileID: 1255099441584999270}
 --- !u!65 &8218978385501525020
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2225,8 +2204,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 0
   dimVoid: 0
+  DOT: 0
   enemy_health: 5
   enemy_health_bar: {fileID: 1824211738040256593}
+--- !u!114 &7226213654558630715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8002262039976578396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31572e4941e6c1f43b3023c57ada4746, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 0
+  dimVoid: 0
+  DOT: 0
+  agent: {fileID: 8002262039976578395}
+  bullet: {fileID: 3410436837326743179, guid: 7ebfd9009e0894416aabbe9a0bab2f11, type: 3}
+  lead: 1
+  bullets: 10
+  bulletSpeed: 10
+  confused: 0
+  point: {fileID: 1255099441584999270}
 --- !u!1 &8002262039976578398
 GameObject:
   m_ObjectHideFlags: 0

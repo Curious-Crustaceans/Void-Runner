@@ -2342,9 +2342,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2535158009961719348}
   - component: {fileID: 2535158009971436192}
-  - component: {fileID: 6307601022061528130}
   - component: {fileID: 4500539562084669441}
   - component: {fileID: 7998437491990813912}
+  - component: {fileID: 3203655264075482021}
   m_Layer: 0
   m_Name: Psionic Trooper
   m_TagString: Enemy
@@ -2390,7 +2390,35 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &6307601022061528130
+--- !u!136 &4500539562084669441
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2535158009962084884}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.7385376
+  m_Height: 1.4770752
+  m_Direction: 1
+  m_Center: {x: 0.03407687, y: -0.000000059604645, z: 0}
+--- !u!114 &7998437491990813912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2535158009962084884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f8efabe711579f4e81db2078ffa3081, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy_health: 4
+  enemy_health_bar: {fileID: 923727356644257376}
+--- !u!114 &3203655264075482021
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2404,38 +2432,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 0
   dimVoid: 0
+  DOT: 0
   bullet: {fileID: 3530617992914048200, guid: 5254c4119e8ff4947896056d7bc7300e, type: 3}
   point: {fileID: 7236631932526781106}
---- !u!136 &4500539562084669441
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2535158009962084884}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7998437491990813912
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2535158009962084884}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f8efabe711579f4e81db2078ffa3081, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  active: 0
-  dimVoid: 0
-  enemy_health: 4
-  enemy_health_bar: {fileID: 923727356644257376}
 --- !u!1 &7236631932526781106
 GameObject:
   m_ObjectHideFlags: 0
@@ -2610,7 +2609,7 @@ PrefabInstance:
     - target: {fileID: 6794591315524157209, guid: f0bb6c0bb4590458c88e1f665ffe8c07,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2
+      value: -17
       objectReference: {fileID: 0}
     - target: {fileID: 6794591315524157209, guid: f0bb6c0bb4590458c88e1f665ffe8c07,
         type: 3}
@@ -2655,12 +2654,12 @@ PrefabInstance:
     - target: {fileID: 6794591315524157209, guid: f0bb6c0bb4590458c88e1f665ffe8c07,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 592
       objectReference: {fileID: 0}
     - target: {fileID: 6794591315524157209, guid: f0bb6c0bb4590458c88e1f665ffe8c07,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 1253
       objectReference: {fileID: 0}
     - target: {fileID: 6794591315524157209, guid: f0bb6c0bb4590458c88e1f665ffe8c07,
         type: 3}
