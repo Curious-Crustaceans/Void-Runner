@@ -8,4 +8,13 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Anthony.unity
+    guid: b8f02b2594910514886815f3c70efa58
+  - enabled: 1
+    path: Assets/Scenes/TitleScreen.unity
+    guid: c0633914e38c04474ab80db3790a9e02
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: d35d002ca4feb49c8b9cbc8f7ed3f1fd
   m_configObjects: {}
