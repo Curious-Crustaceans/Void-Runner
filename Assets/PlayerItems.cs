@@ -59,4 +59,8 @@ public class PlayerItems : MonoBehaviour
 
     }
 
+    public void SetDamage(float dam){
+        damage = dam;
+    }
+
 }

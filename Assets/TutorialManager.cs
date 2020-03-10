@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TutorialManager : MonoBehaviour
 {
-    PlayerBulletCollision playerbullet;
+    PlayerItems playerItem;
     TMPro.TextMeshProUGUI directions;
     string aim_horz = "RightJoyStickX";
     string aim_vert = "RightJoyStickY";
@@ -28,8 +28,8 @@ public class TutorialManager : MonoBehaviour
         directions = GameObject.Find("Direct").GetComponent<TMPro.TextMeshProUGUI>();
         string[] startDirections = new string[]{ "Welcome to the Tutorial!","Meet your pal, Phil the Pill", "Try moving Phil with the left Joystick or WASD"};
         StartCoroutine(showText(startDirections));
-        playerbullet = GameObject.Find("Player").GetComponent<PlayerShooting>().player_bullet.GetComponent<PlayerBulletCollision>();
-        playerbullet.bulletDMG = 0;
+        playerItem = GameObject.Find("Player").GetComponent<PlayerItems>();
+        playerItem.SetDamage(0f);
     }
 
     // Update is called once per frame
@@ -40,18 +40,19 @@ public class TutorialManager : MonoBehaviour
             StartCoroutine(showText(new string[] { "Great!", "Try shooting using right joystick or the arrow keys"}));
         }
 
-        if((Input.GetAxis(aim_horz) != 0 || Input.GetAxis(aim_vert) != 0) && !completed[1] && !hit2){
+        bool temp = Input.GetAxis(aim_horz) != 0 || Input.GetAxis(aim_vert) != 0 || Input.GetAxisRaw("FireH") != 0 || Input.GetAxisRaw("FireV") != 0;
+        if (temp && !completed[1] && !hit2){
             hit2 = true;
             StartCoroutine(showText(new string[] { "Great!", "Try using the right trigger or the space bar to enter and exit the void"})); 
         }
 
-        if(Input.GetAxis(void_switch) > 0.1 && !completed[2] && !hit3){
+        if((Input.GetAxis(void_switch) > 0.1 || Input.GetKeyDown(KeyCode.Space)) && !completed[2] && !hit3){
             hit3 = true;
             StartCoroutine(showText(new string[] { "Great!", "Be careful of zombies in the void", "Now try to kill the turret above", "Watch out for bullets"}));
             //Spawn the block show it "Be on the look out for item pick ups and healing cubes"
             // Now try to kill the turret, watch out for his bullets!
             //Congratulations you have completed the tutorial, you can always access it from the Main Menu
-            playerbullet.bulletDMG = 1;
+            playerItem.SetDamage(1f);
             GameObject.Find("Turret (2)").GetComponent<EnemyMind>().active = true;
         }
 
