@@ -16,11 +16,10 @@ public class ProcGen : MonoBehaviour
     private List<UnityEngine.Object> ItemRooms = new List<UnityEngine.Object>();
     private List<UnityEngine.Object> SpecialRooms = new List<UnityEngine.Object>();
     private List<UnityEngine.Object> Boss = new List<UnityEngine.Object>();
-    private List<UnityEngine.Object> FourRoomAll = new List<UnityEngine.Object>();
     private List<UnityEngine.Object> FourRoom = new List<UnityEngine.Object>();
     public GameObject spawn;
     GameObject randRoom;
-    //Initializes a matrix that represents the level. Each room is a vector2 where x is if the room exists and y is the number of adjacent rooms. Z is a way to keep track of which walls need to have connections. This number is represented by a psuedo binary number in base ten.
+    //Initializes a matrix that represents the level. Each room is a vector3 where x is if the room exists and y is the number of adjacent rooms. Z is a way to keep track of which walls need to have connections. This number is represented by a psuedo binary number in base ten.
     // for x 
     //1 = regular room
     //2= Spawn
@@ -34,7 +33,7 @@ public class ProcGen : MonoBehaviour
         SpecialRooms = Resources.LoadAll("SpecialRooms", typeof(GameObject)).ToList();
         ItemRooms = Resources.LoadAll("ItemRooms", typeof(GameObject)).ToList();
         FourRoom = Resources.LoadAll("4", typeof(GameObject)).ToList();
-        FourRoomAll = FourRoom;
+       
         Boss = Resources.LoadAll("Boss", typeof(GameObject)).ToList();
         dungeon[11, 11].x = 2;
         IncAdj(11, 11);
@@ -48,8 +47,10 @@ public class ProcGen : MonoBehaviour
         SpawnBoss();
         SpawnSpecialRoom();
         SpawnItemRoom();
-        
-       
+        SpawnItemRoom();
+
+
+
         GenerateLevel();
     }
 
@@ -79,6 +80,8 @@ public class ProcGen : MonoBehaviour
     }
     void SpawnItemRoom()
     {
+        
+        
         while (true)
         {
             int x = Random.Range(1, 21);

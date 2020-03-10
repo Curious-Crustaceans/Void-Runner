@@ -171,6 +171,16 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 32
       objectReference: {fileID: 0}
+    - target: {fileID: 1569004246, guid: 666ab9d653f228d429c23c5a14d7c6db, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 1bc1245284da0614d90508b97570863d,
+        type: 2}
+    - target: {fileID: 1569004246, guid: 666ab9d653f228d429c23c5a14d7c6db, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -3451989137942947056, guid: 1bc1245284da0614d90508b97570863d,
+        type: 2}
     - target: {fileID: 1669227647, guid: 666ab9d653f228d429c23c5a14d7c6db, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -227,6 +237,16 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 48
       objectReference: {fileID: 0}
+    - target: {fileID: 1669227649, guid: 666ab9d653f228d429c23c5a14d7c6db, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 1bc1245284da0614d90508b97570863d,
+        type: 2}
+    - target: {fileID: 1669227649, guid: 666ab9d653f228d429c23c5a14d7c6db, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -3451989137942947056, guid: 1bc1245284da0614d90508b97570863d,
+        type: 2}
     - target: {fileID: 1780540879854140034, guid: 666ab9d653f228d429c23c5a14d7c6db,
         type: 3}
       propertyPath: m_Name
@@ -407,7 +427,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21758681037435d4e8a4127458c7b9e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelSize: 10
+  levelSize: 2
   spawn: {fileID: 4307830257013270701, guid: d25d8d0bb0e284742a8d5eaacdeb662a, type: 3}
 --- !u!1 &726790689 stripped
 GameObject:

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1490230900297604688}
   - component: {fileID: 5817043825327200841}
   m_Layer: 0
-  m_Name: Ouroborus Sigil Pickup
+  m_Name: Ouroborus Relic Pickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -106,5 +106,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 6942562124050991129, guid: e30d913b23392104fa156d13e6cbad95, type: 3}
-  ItemName: Ouroborus Sigil
-  FlavorText: What Was Will Be...Fractal Shots!
+  ItemName: Ouroborus Relic
+  FlavorText: What Was Will Be...Recursive Shots!
