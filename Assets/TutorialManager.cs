@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TutorialManager : MonoBehaviour
 {
@@ -9,12 +10,14 @@ public class TutorialManager : MonoBehaviour
     string aim_horz = "RightJoyStickX";
     string aim_vert = "RightJoyStickY";
     string void_switch = "RT";
-    bool[] completed = new bool[] {true, true, true, true}; //this controls order; other bools ensures code only runs once
+    bool[] completed = new bool[] {true, true, true, true, true}; //this controls order; other bools ensures code only runs once
     bool hit1 = false;
     bool hit2 = false;
     bool hit3 = false;
     bool hit4 = false;
+    bool hit5 = false;
     int count = 0;
+    GameObject item;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +33,8 @@ public class TutorialManager : MonoBehaviour
         StartCoroutine(showText(startDirections));
         playerItem = GameObject.Find("Player").GetComponent<PlayerItems>();
         playerItem.SetDamage(0f);
+        item = GameObject.Find("ItemP");
+        item.SetActive(false);
     }
 
     // Update is called once per frame
@@ -48,19 +53,28 @@ public class TutorialManager : MonoBehaviour
 
         if((Input.GetAxis(void_switch) > 0.1 || Input.GetKeyDown(KeyCode.Space)) && !completed[2] && !hit3){
             hit3 = true;
-            StartCoroutine(showText(new string[] { "Great!", "Be careful of zombies in the void", "Now try to kill the turret above", "Watch out for bullets"}));
-            //Spawn the block show it "Be on the look out for item pick ups and healing cubes"
-            // Now try to kill the turret, watch out for his bullets!
-            //Congratulations you have completed the tutorial, you can always access it from the Main Menu
+            StartCoroutine(showText(new string[] { "Great!", "Be careful of zombies in the void", "Now pick up the white box item", "It will give you a powerup"}));
+            StartCoroutine(StartSetActive());
+        }
+
+        if (!hit4 && !completed[3]){
+            hit4 = true;
+            StartCoroutine(showText(new string[] { "Nice!", "Now try to kill the turret", "Watch out for bullets"}));
             playerItem.SetDamage(1f);
             GameObject.Find("Turret (2)").GetComponent<EnemyMind>().active = true;
         }
 
-        if(GameObject.Find("Turret (2)") == null && !hit4 && !completed[3]){
-            hit4 = true;
+
+        if (GameObject.Find("Turret (2)") == null && !hit5 && !completed[4]){
+            hit5 = true;
             StartCoroutine(showText(new string[]{"Congratulations you killed the turret", "This is the end of the tutorial", "Enjoy your Journey in VoidRunner"}));
+
         }
 
+
+        if(hit5){
+            StartCoroutine(Exit());
+        }
 
 
     }
@@ -77,5 +91,15 @@ public class TutorialManager : MonoBehaviour
         }
         completed[count] = false;
         count++;
+    }
+
+    IEnumerator Exit(){
+        yield return new WaitForSecondsRealtime(11f);
+        SceneManager.LoadScene("TitleScreen");
+    }
+
+    IEnumerator StartSetActive(){
+        yield return new WaitForSecondsRealtime(10f);
+        item.SetActive(true);
     }
 }
