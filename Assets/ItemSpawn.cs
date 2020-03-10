@@ -7,6 +7,7 @@ public class ItemSpawn : MonoBehaviour
 {
     private List<UnityEngine.Object> Items = new List<UnityEngine.Object>();
     GameObject randItem;
+    Transform t1;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +15,7 @@ public class ItemSpawn : MonoBehaviour
         randItem = (GameObject)Items[Random.Range(0, Items.Count)];
         GameObject newItem = Instantiate(randItem, transform);
 
+        t1 = GameObject.Find("ItemPedastal").transform;
        
         Items.Remove(randItem);
         if (Items.Count == 0)
@@ -24,5 +26,9 @@ public class ItemSpawn : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public bool taken(){
+        return t1.childCount <= 1;
     }
 }

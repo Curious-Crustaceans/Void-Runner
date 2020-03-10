@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class TutorialManager : MonoBehaviour
 {
     PlayerItems playerItem;
+    ItemSpawn itemSpawn;
     TMPro.TextMeshProUGUI directions;
     string aim_horz = "RightJoyStickX";
     string aim_vert = "RightJoyStickY";
@@ -33,8 +34,9 @@ public class TutorialManager : MonoBehaviour
         StartCoroutine(showText(startDirections));
         playerItem = GameObject.Find("Player").GetComponent<PlayerItems>();
         playerItem.SetDamage(0f);
-        item = GameObject.Find("ItemP");
+        item = GameObject.Find("ItemPedastal");
         item.SetActive(false);
+        itemSpawn = item.GetComponent<ItemSpawn>();
     }
 
     // Update is called once per frame
@@ -57,7 +59,7 @@ public class TutorialManager : MonoBehaviour
             StartCoroutine(StartSetActive());
         }
 
-        if (!hit4 && !completed[3]){
+        if (!hit4 && !completed[3] && itemSpawn.taken()){
             hit4 = true;
             StartCoroutine(showText(new string[] { "Nice!", "Now try to kill the turret", "Watch out for bullets"}));
             playerItem.SetDamage(1f);
