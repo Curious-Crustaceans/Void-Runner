@@ -38,4 +38,22 @@ public class Doors : MonoBehaviour
 
         }
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            other.gameObject.GetComponent<Movement>().canShift = false;
+
+        }
+
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            other.gameObject.GetComponent<Movement>().canShift = true;
+
+        }
+
+    }
 }

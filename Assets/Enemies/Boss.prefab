@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 7365835302836899586}
   - component: {fileID: 7365835302836899587}
   - component: {fileID: 7365835302836899596}
+  - component: {fileID: 9007496151747659528}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Untagged
@@ -259,11 +260,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f8efabe711579f4e81db2078ffa3081, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemy_health: 20
+  enemy_health_bar: {fileID: 4511389694472846016}
+--- !u!114 &9007496151747659528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7365835302836899589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f8d3068799594e408c99474778e789d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   active: 0
   dimVoid: 0
   DOT: 0
-  enemy_health: 20
-  enemy_health_bar: {fileID: 4511389694472846016}
 --- !u!1001 &4888803061664572998
 PrefabInstance:
   m_ObjectHideFlags: 0

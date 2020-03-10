@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject player;
+    GameObject player;
     public GameObject cam;
     Vector2 playerCoords = new Vector2(0, 0);
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = GameObject.Find("Player");
         
     }
 

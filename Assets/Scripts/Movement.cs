@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    
 
-   
+
+    public bool canShift = true;
     bool canMove = true;
     Rigidbody playerRigidbody;          // Reference to the player's rigidbody.
     Transform transf;                    // A layer mask so that a ray can be cast just at gameobjects on the floor layer.
-    int dir = 1;
+    int direction = 1;
     public Camera cam;
     Vector3 goalV;
     bool hit0 = true;
@@ -44,9 +44,8 @@ public class Movement : MonoBehaviour
         if (Input.GetKeyDown("space") || (Input.GetAxis(void_switch) > 0.99 && hit0))
         {
             hit0 = false;
-            Shift(dir);
-            dir *= -1;
-            canMove = false;
+            Shift(direction);
+           
         }
         if (canMove)
         {
@@ -85,18 +84,25 @@ public class Movement : MonoBehaviour
     void Shift(int dir)
     {
 
-        
-
-        if (dir == 1)
+       
+        if (canShift)
         {
-            transf.SetPositionAndRotation(transform.position + new Vector3(0, -50, 0), transf.rotation);
-            cam.transform.SetPositionAndRotation(cam.transform.position + new Vector3(0, -50, 0), cam.transform.rotation);
+           
+            canMove = false;
+            if (dir == 1)
+            {
+                transf.SetPositionAndRotation(transform.position + new Vector3(0, -50, 0), transf.rotation);
+                cam.transform.SetPositionAndRotation(cam.transform.position + new Vector3(0, -50, 0), cam.transform.rotation);
+                direction = -1;
+            }
+            else
+            {
+                transf.SetPositionAndRotation(transform.position + new Vector3(0, 50, 0), transf.rotation);
+                cam.transform.SetPositionAndRotation(cam.transform.position + new Vector3(0, 50, 0), cam.transform.rotation);
+                direction = 1;
+            }
+            gameObject.GetComponent<PlayerItems>().onShiftBroadcast();
+            
         }
-        else
-        {
-            transf.SetPositionAndRotation(transform.position + new Vector3(0, 50, 0), transf.rotation);
-            cam.transform.SetPositionAndRotation(cam.transform.position + new Vector3(0, 50, 0), cam.transform.rotation);
-        }
-        gameObject.GetComponent<PlayerItems>().onShiftBroadcast();
     }
 }
