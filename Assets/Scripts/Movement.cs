@@ -105,4 +105,8 @@ public class Movement : MonoBehaviour
             
         }
     }
+
+    public void UpdateCamera(){
+        cam = GameObject.Find("MainCamera").GetComponent<Camera>();
+    }
 }
