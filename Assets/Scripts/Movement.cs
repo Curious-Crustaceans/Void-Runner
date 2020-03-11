@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Movement : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class Movement : MonoBehaviour
     Rigidbody playerRigidbody;          // Reference to the player's rigidbody.
     Transform transf;                    // A layer mask so that a ray can be cast just at gameobjects on the floor layer.
     int direction = 1;
-    public Camera cam;
+    Camera cam;
     Vector3 goalV;
     bool hit0 = true;
     string void_switch = "RT";
@@ -106,7 +107,8 @@ public class Movement : MonoBehaviour
         }
     }
 
-    public void UpdateCamera(){
+    private void OnLevelWasLoaded(int level)
+    {
         cam = GameObject.Find("MainCamera").GetComponent<Camera>();
     }
 }

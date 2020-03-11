@@ -48,15 +48,26 @@ public class LevelManager : MonoBehaviour
     public void NextLevel(){
         if (scene == 5)
         {
-            EndGame();
+            GameObject.Find("ItemName").GetComponent<TMPro.TextMeshProUGUI>().text = "Congratulations! You are now a Void-Master";
+            StartCoroutine(EndGameHandler());
         }
         else
         {
-            scene++;
-            SceneManager.LoadScene(scene);
-            Vector3 pos = player.transform.position;
-            player.transform.position = new Vector3(0, pos.y, 0);
-            player.GetComponent<Movement>().UpdateCamera();
+            GameObject.Find("ItemName").GetComponent<TMPro.TextMeshProUGUI>().text = "Level Complete! Teleporting to next level...";
+            StartCoroutine(NextLevelHandler());
         }
+    }
+
+    IEnumerator NextLevelHandler(){
+        yield return new WaitForSecondsRealtime(3f);
+        scene++;
+        SceneManager.LoadScene(scene);
+        Vector3 pos = player.transform.position;
+        player.transform.position = new Vector3(0, pos.y, 0);
+    }
+
+    IEnumerator EndGameHandler(){
+        yield return new WaitForSecondsRealtime(4f);
+        EndGame();
     }
 }

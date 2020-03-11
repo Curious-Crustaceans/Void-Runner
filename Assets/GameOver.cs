@@ -5,13 +5,16 @@ public class GameOver : MonoBehaviour
 {
     public void MainMenu() {
     	Debug.Log("MM");
-    	SceneManager.LoadScene("TitleScreen");
+        Destroy(GameObject.Find("Player"));
+        Destroy(GameObject.Find("LevelManager"));
+        SceneManager.LoadScene("TitleScreen");
     	
     }
 
     public void Restart() {
     	Debug.Log("R");
-    	SceneManager.LoadScene("Anthony");
-    	
+        Destroy(GameObject.Find("Player"));
+        Destroy(GameObject.Find("LevelManager"));
+        SceneManager.LoadScene("Level1");
     }
 }
