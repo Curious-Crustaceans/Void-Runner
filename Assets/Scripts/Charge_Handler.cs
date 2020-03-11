@@ -30,7 +30,7 @@ public class Charge_Handler : EnemyMind
             collided = true;
         }
         if(other.gameObject.tag == "Player"){
-            playerScript.TakeDMG(5);
+            playerScript.TakeDMG(2);
         }
     }
 
