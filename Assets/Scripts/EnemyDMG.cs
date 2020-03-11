@@ -10,6 +10,7 @@ public class EnemyDMG : MonoBehaviour
     public HealthBar enemy_health_bar;
     Transform tf;
     bool changed = false;
+    
 
     void Awake() {
         enemy_health_bar.SetMaxHealth(enemy_health);
@@ -20,6 +21,7 @@ public class EnemyDMG : MonoBehaviour
        
     	enemy_health = enemy_health - dmg;
         enemy_health_bar.SetHealth(enemy_health);
+       
     }
 
     void Update(){
@@ -37,6 +39,8 @@ public class EnemyDMG : MonoBehaviour
             }
         }
     }
+
+   
 
 
 }

@@ -52,7 +52,7 @@ public class ExplosiveBulletScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         gameObject.GetComponent<Rigidbody>().AddForce(0, -gravity, 0);
         if (transform.position.y < 0) 
