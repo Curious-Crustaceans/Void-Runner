@@ -46,7 +46,7 @@ public class Item_Use : MonoBehaviour
         float y = t1.localScale.y * scale_factor;
         float z = t1.localScale.z * scale_factor;
         t1.localScale = new Vector3(x, y, x);
-        pdmg.GainDMG(1);
+        pdmg.GainDMG(0.1f);
         yield return new WaitForSecondsRealtime(time);
     }
 }
