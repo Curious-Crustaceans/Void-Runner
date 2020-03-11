@@ -19,6 +19,8 @@ public class RoomManager : MonoBehaviour
     
     private bool alive = false;
     private bool flip = true;
+
+    
     
     void Update()
     {
@@ -73,6 +75,8 @@ public class RoomManager : MonoBehaviour
         }
         player = GameObject.Find("Player");
         openDoorsInitial();
+        
+        
      
 
 
@@ -130,6 +134,8 @@ public class RoomManager : MonoBehaviour
         }
         
     }
+
+    
 
 
 
