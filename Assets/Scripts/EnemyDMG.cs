@@ -8,12 +8,12 @@ public class EnemyDMG : MonoBehaviour
     
     public float enemy_health;
     public HealthBar enemy_health_bar;
-    Rigidbody rb;
+    Transform tf;
     bool changed = false;
 
     void Awake() {
         enemy_health_bar.SetMaxHealth(enemy_health);
-        rb = GetComponent<Rigidbody>();
+        tf = GetComponent<Transform>();
     }
 
     public void TakeDMG(float dmg) {
@@ -27,7 +27,7 @@ public class EnemyDMG : MonoBehaviour
         {
             GameObject.Find("Player").GetComponent<PlayerItems>().onKillBroadcast(transform.position);
 
-            if((rb.name == "Boss" || rb.name == "Charge_Enemy") && !changed){
+            if((tf.name == "Boss" || tf.name == "Charge_Enemy") && !changed){
                 GameObject.Find("LevelManager").GetComponent<LevelManager>().NextLevel();
                 changed = true;
                 Destroy(gameObject);
