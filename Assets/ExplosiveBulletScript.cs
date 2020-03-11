@@ -54,7 +54,7 @@ public class ExplosiveBulletScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gameObject.GetComponent<Rigidbody>().AddForce(0, -1.75f*gravity, 0);
+        gameObject.GetComponent<Rigidbody>().AddForce(0, gravity, 0);
         if (transform.position.y < 0) 
         {
             var part = Instantiate(parts, transform.position, Quaternion.identity);

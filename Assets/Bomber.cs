@@ -27,6 +27,9 @@ public class Bomber : EnemyMind
     // Update is called once per frame
     void Update()
     {
+        
+       
+       
         if(rotateToDirection)
         { 
             
@@ -56,27 +59,30 @@ public class Bomber : EnemyMind
     {
         while (true)
         {
-            direction = Random.insideUnitCircle * 5;
-            rotateToDirection = true;
-            yield return new WaitForSeconds(.5f);
-            rotateToDirection = false;
-            anim.SetBool("Moving", true);
-            
+            if (active)
+            {
+                direction = Random.insideUnitCircle * 5;
+                rotateToDirection = true;
+                yield return new WaitForSeconds(.5f);
+                rotateToDirection = false;
+                anim.SetBool("Moving", true);
 
 
-            yield return new WaitForSeconds(2f);
-            anim.SetBool("Moving", false);
-           
-            
-            yield return new WaitForSeconds(1f);
-            rotateToPlayer = true;
-            yield return new WaitForSeconds(.5f);
-            rotateToPlayer = false;
-            anim.SetTrigger("Attack1Trigger");
-            yield return new WaitForSeconds(.5f);
-            Instantiate(bullet, point.transform.position, Quaternion.identity);
-           
-            yield return new WaitForSeconds(1f);
+
+                yield return new WaitForSeconds(2f);
+                anim.SetBool("Moving", false);
+
+
+                yield return new WaitForSeconds(1f);
+                rotateToPlayer = true;
+                yield return new WaitForSeconds(.5f);
+                rotateToPlayer = false;
+                anim.SetTrigger("Attack1Trigger");
+                yield return new WaitForSeconds(.5f);
+                Instantiate(bullet, point.transform.position, Quaternion.identity);
+
+                yield return new WaitForSeconds(1f);
+            }
         }
     }
 }
