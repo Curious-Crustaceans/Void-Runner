@@ -3,7 +3,6 @@ using UnityEngine.SceneManagement;
 
 public class playbutton : MonoBehaviour
 {
-    
     public void PlayGame() {
     	SceneManager.LoadScene("Level1");
 
