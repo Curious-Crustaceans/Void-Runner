@@ -369,7 +369,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac80bc0ef8422074dae26e93c700b00d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 726790689}
   cam: {fileID: 2128177666}
 --- !u!4 &219162790
 Transform:
@@ -525,6 +524,11 @@ PrefabInstance:
     - target: {fileID: 1536870378317479166, guid: 91daad0052fff014c854251a3aa04106,
         type: 3}
       propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1536870378317479166, guid: 91daad0052fff014c854251a3aa04106,
+        type: 3}
+      propertyPath: m_UseGravity
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1536870378317479167, guid: 91daad0052fff014c854251a3aa04106,

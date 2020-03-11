@@ -17,7 +17,7 @@ public class ItemSpawn : MonoBehaviour
 
         t1 = GameObject.Find("ItemPedastal").transform;
        
-        Items.Remove(randItem);
+        Items.Remove(newItem);
         if (Items.Count == 0)
             Items = Resources.LoadAll("Items", typeof(GameObject)).ToList();
     }
