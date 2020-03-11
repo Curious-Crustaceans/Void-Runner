@@ -86,4 +86,11 @@ public class PlayerDMG : MonoBehaviour
     	}
 
    }
+
+    private void OnLevelWasLoaded(int level)
+    {
+        healthBar = GameObject.Find("HealthBar").GetComponent<HealthBar>();
+        gameover = GameObject.Find("GameOver");
+        gameover.SetActive(false);
+    }
 }
