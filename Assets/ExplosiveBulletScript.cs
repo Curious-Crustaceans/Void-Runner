@@ -25,22 +25,22 @@ public class ExplosiveBulletScript : MonoBehaviour
         target = GameObject.Find("Player");
 
         velocity = target.transform.position;
-            velocity.y = 0;
-        distance = Vector3.Distance(transform.position,velocity)-1.54f;
+            velocity.y = 1;
+        distance = Vector3.Distance(transform.position,velocity) - 1.54f;
 
        
 
 
-        theta = (Mathf.PI / 2)-(Mathf.Asin(gravity * distance / 400))/2;
+        theta = (Mathf.PI / 2)-(Mathf.Asin(gravity * distance / 225))/2;
 
         if (float.IsNaN(theta))
         { theta = Mathf.PI / 4; }
 
        
-        yVelocity = 20* Mathf.Sin(theta);
-        hVelocity = 20 * Mathf.Cos(theta);
+        yVelocity = 15* Mathf.Sin(theta);
+        hVelocity = 15 * Mathf.Cos(theta);
         distVector = target.transform.position - transform.position;
-       
+        distVector.y = 0;
         distVector = distVector.normalized * hVelocity;
         distVector.y = yVelocity;
 
@@ -54,7 +54,7 @@ public class ExplosiveBulletScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gameObject.GetComponent<Rigidbody>().AddForce(0, gravity, 0);
+        gameObject.GetComponent<Rigidbody>().AddForce(0, -gravity, 0);
         if (transform.position.y < 0) 
         {
             var part = Instantiate(parts, transform.position, Quaternion.identity);

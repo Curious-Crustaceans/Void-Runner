@@ -11,6 +11,7 @@ public class Bomber : EnemyMind
     Animator anim;
     bool rotateToPlayer = false;
     bool rotateToDirection = false;
+    bool triggered = true;
     Vector2 direction;
     public GameObject bullet;
 
@@ -20,14 +21,18 @@ public class Bomber : EnemyMind
         target = GameObject.Find("Player");
         active = false;
         anim = gameObject.GetComponent<Animator>();
-        StartCoroutine(cycle());
+        
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (active && triggered)
+        {
+            StartCoroutine(cycle());
+            triggered = false;
+        }
        
        
         if(rotateToDirection)
@@ -59,8 +64,8 @@ public class Bomber : EnemyMind
     {
         while (true)
         {
-            if (active)
-            {
+           // if (active)
+            //{
                 direction = Random.insideUnitCircle * 5;
                 rotateToDirection = true;
                 yield return new WaitForSeconds(.5f);
@@ -82,7 +87,7 @@ public class Bomber : EnemyMind
                 Instantiate(bullet, point.transform.position, Quaternion.identity);
 
                 yield return new WaitForSeconds(1f);
-            }
+           // }
         }
     }
 }

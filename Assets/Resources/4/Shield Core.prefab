@@ -522,7 +522,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.21666665
   m_BuildHeightMesh: 0
-  m_NavMeshData: {fileID: 23800000, guid: 5addfe2b7e8c63843abc8a54652095b2, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 882a2164768e76b4ebcc6fce621fafd5, type: 2}
 --- !u!1 &3040563578266224529
 GameObject:
   m_ObjectHideFlags: 0
@@ -26195,12 +26195,12 @@ PrefabInstance:
     - target: {fileID: 2535158009967556244, guid: 756457e9df300594f823cc85a5f9ab68,
         type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: -0.0018450127
+      value: -0.0018450499
       objectReference: {fileID: 0}
     - target: {fileID: 2535158009967556244, guid: 756457e9df300594f823cc85a5f9ab68,
         type: 3}
       propertyPath: m_ConnectedAnchor.z
-      value: -0.021381088
+      value: -0.021381095
       objectReference: {fileID: 0}
     - target: {fileID: 2535158009967556244, guid: 756457e9df300594f823cc85a5f9ab68,
         type: 3}
@@ -26215,7 +26215,7 @@ PrefabInstance:
     - target: {fileID: 2535158009967556264, guid: 756457e9df300594f823cc85a5f9ab68,
         type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: -0.0000000049334687
+      value: -2.842171e-14
       objectReference: {fileID: 0}
     - target: {fileID: 2535158009967556264, guid: 756457e9df300594f823cc85a5f9ab68,
         type: 3}
@@ -26230,7 +26230,7 @@ PrefabInstance:
     - target: {fileID: 2535158009967556266, guid: 756457e9df300594f823cc85a5f9ab68,
         type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: 0.0000003402686
+      value: 0.00000034340925
       objectReference: {fileID: 0}
     - target: {fileID: 2535158009967556266, guid: 756457e9df300594f823cc85a5f9ab68,
         type: 3}
@@ -26245,7 +26245,7 @@ PrefabInstance:
     - target: {fileID: 2535158009967642788, guid: 756457e9df300594f823cc85a5f9ab68,
         type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: 0.00000033958602
+      value: 0.00000034451946
       objectReference: {fileID: 0}
     - target: {fileID: 2535158009967642788, guid: 756457e9df300594f823cc85a5f9ab68,
         type: 3}
