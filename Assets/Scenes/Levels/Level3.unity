@@ -252,6 +252,16 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1780540880878068088, guid: 666ab9d653f228d429c23c5a14d7c6db,
+        type: 3}
+      propertyPath: m_MaxValue
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780540880878068088, guid: 666ab9d653f228d429c23c5a14d7c6db,
+        type: 3}
+      propertyPath: m_Value
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4326024540544697512, guid: 666ab9d653f228d429c23c5a14d7c6db,
         type: 3}
       propertyPath: m_Colors.m_HighlightedColor.r
