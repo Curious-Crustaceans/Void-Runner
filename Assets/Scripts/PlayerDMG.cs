@@ -92,5 +92,6 @@ public class PlayerDMG : MonoBehaviour
         healthBar = GameObject.Find("HealthBar").GetComponent<HealthBar>();
         gameover = GameObject.Find("GameOver");
         gameover.SetActive(false);
+        healthBar.SetHealth(player_health);
     }
 }

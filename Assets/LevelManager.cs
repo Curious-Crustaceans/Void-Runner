@@ -63,7 +63,7 @@ public class LevelManager : MonoBehaviour
         scene++;
         SceneManager.LoadScene(scene);
         Vector3 pos = player.transform.position;
-        player.transform.position = new Vector3(0, pos.y, 0);
+        player.transform.position = new Vector3(0, 1.3f, 0);
     }
 
     IEnumerator EndGameHandler(){
