@@ -295,7 +295,7 @@ PrefabInstance:
     - target: {fileID: 5400404355555428875, guid: 666ab9d653f228d429c23c5a14d7c6db,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6103901545435912832, guid: 666ab9d653f228d429c23c5a14d7c6db,
         type: 3}
@@ -369,7 +369,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac80bc0ef8422074dae26e93c700b00d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   cam: {fileID: 2128177666}
 --- !u!4 &219162790
 Transform:
