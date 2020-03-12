@@ -12,7 +12,7 @@ public class HomingBullet : MonoBehaviour
     void Start()
     {
         target = GameObject.Find("Player");
-        gameObject.GetComponent<Rigidbody>().velocity = (((target.transform.position - transform.position).normalized * 15));
+        gameObject.GetComponent<Rigidbody>().velocity = (((target.transform.position - transform.position).normalized * 10));
     }
 
     // Update is called once per frame
@@ -25,7 +25,7 @@ public class HomingBullet : MonoBehaviour
             //agent.SetDestination(target.transform.position);
            
         }
-        gameObject.GetComponent<Rigidbody>().AddForce((force * 15 - gameObject.GetComponent<Rigidbody>().velocity) * 5f);
+        gameObject.GetComponent<Rigidbody>().AddForce((force * 10 - gameObject.GetComponent<Rigidbody>().velocity) * 1f);
 
     }
 }

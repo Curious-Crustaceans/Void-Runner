@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-    int scene = 3;
+    int scene = 2;
     bool changed = false;
     GameObject player;
 
@@ -46,7 +46,7 @@ public class LevelManager : MonoBehaviour
     }
 
     public void NextLevel(){
-        if (scene == 5)
+        if (scene == 4)
         {
             GameObject.Find("ItemName").GetComponent<TMPro.TextMeshProUGUI>().text = "Congratulations! You are now a Void-Master";
             StartCoroutine(EndGameHandler());

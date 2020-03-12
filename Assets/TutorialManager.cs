@@ -30,7 +30,7 @@ public class TutorialManager : MonoBehaviour
         }
 
         directions = GameObject.Find("Direct").GetComponent<TMPro.TextMeshProUGUI>();
-        string[] startDirections = new string[]{ "Welcome to the Tutorial!","Meet your pal, Phil the Pill", "Try moving Phil with the left Joystick or WASD"};
+        string[] startDirections = new string[] { "Welcome back subject K063-P177","After your scheduled memory wipe you may need to relearn your abilities", "You can move with the left stick or WASD" };
         StartCoroutine(showText(startDirections));
         playerItem = GameObject.Find("Player").GetComponent<PlayerItems>();
         playerItem.SetDamage(0f);
@@ -44,24 +44,24 @@ public class TutorialManager : MonoBehaviour
     {
         if((Input.GetAxisRaw("Vertical") != 0 || Input.GetAxisRaw("Horizontal") != 0) && !completed[0] && !hit1){
             hit1 = true;
-            StartCoroutine(showText(new string[] { "Great!", "Try shooting using right joystick or the arrow keys"}));
+            StartCoroutine(showText(new string[] { "Excellent, you can still walk. The new memory wipe procedure was a sucess!", "See if you can still harness your inate energy to fire projectiles.","Try using the right stick or the arrow keys."}));
         }
 
         bool temp = Input.GetAxis(aim_horz) != 0 || Input.GetAxis(aim_vert) != 0 || Input.GetAxisRaw("FireH") != 0 || Input.GetAxisRaw("FireV") != 0;
         if (temp && !completed[1] && !hit2){
             hit2 = true;
-            StartCoroutine(showText(new string[] { "Great!", "Try using the right trigger or the space bar to enter and exit the void"})); 
+            StartCoroutine(showText(new string[] { "The source of your abilites is a topographically monotonic, zero point dimensional mobius flux", "For someone who has a minute worth of memories... you can steal energy from a alternate dimension you previously referred to as the void", "You can enter the Void with RT or space"})); 
         }
 
         if((Input.GetAxis(void_switch) > 0.1 || Input.GetKeyDown(KeyCode.Space)) && !completed[2] && !hit3){
             hit3 = true;
-            StartCoroutine(showText(new string[] { "Great!", "Be careful of zombies in the void", "Now pick up the white box item", "It will give you a powerup"}));
+            StartCoroutine(showText(new string[] { "Wonderful", "Hostile entities live in the void and are attracted to the vibrations caused by your shift", "This facility stores numerous other anomalous items stored in white boxes", "Today we will test how they influence your abilities, so please collect the box"}));
             StartCoroutine(StartSetActive());
         }
 
         if (!hit4 && !completed[3] && itemSpawn.taken()){
             hit4 = true;
-            StartCoroutine(showText(new string[] { "Nice!", "Now try to kill the turret", "Watch out for bullets"}));
+            StartCoroutine(showText(new string[] { "Facinating", "Please test the interaction on the turret", "For your safety, the bullets are holographic"}));
             playerItem.SetDamage(1f);
             GameObject.Find("Turret (2)").GetComponent<EnemyMind>().active = true;
         }
@@ -69,7 +69,7 @@ public class TutorialManager : MonoBehaviour
 
         if (GameObject.Find("Turret (2)") == null && !hit5 && !completed[4]){
             hit5 = true;
-            StartCoroutine(showText(new string[]{"Congratulations you killed the turret", "This is the end of the tutorial", "Enjoy your Journey in VoidRunner"}));
+            StartCoroutine(showText(new string[]{"WARNING >>> CONTAINMENT BREACH IN SECTOR 13 >>> FACILITY LOCKDOWN ENGAGED >>> AUTOMATED DEFENSES ONLINE", "Huh...Ignore that...Everything is fine...", "In the mean time we will return you to your cell...I mean personal quarters"}));
 
         }
 
@@ -86,7 +86,7 @@ public class TutorialManager : MonoBehaviour
         directions.text = "";
         foreach(string s in message){
             directions.text = s;
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(5f);
         }
         if(count - 1 >= 0){
             completed[count - 1] = true;
