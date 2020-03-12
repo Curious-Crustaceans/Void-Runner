@@ -25,7 +25,7 @@ public class Creampie : MonoBehaviour
             DMG = transform.parent.GetComponent<PlayerItems>().getDamage()*.75f;
             position.y = 1.15f;
             float step = 2 * Mathf.PI / 5;
-            float pos = step;
+            float pos = step + Random.value;
             for (int i = 0; i < 5; i++)
             {
                 Vector3 direction = new Vector3(Mathf.Cos(pos), 0, Mathf.Sin(pos));

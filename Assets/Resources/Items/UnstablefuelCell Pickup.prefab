@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3644247193359494378}
   - component: {fileID: 3644247193359494381}
   - component: {fileID: 8540760111803885812}
+  - component: {fileID: 746349816054563814}
   m_Layer: 0
   m_Name: UnstablefuelCell Pickup
   m_TagString: Untagged
@@ -108,3 +109,19 @@ MonoBehaviour:
   item: {fileID: 6942562124050991129, guid: 6950ddced3f8c324aaee2a17ad383e9f, type: 3}
   ItemName: Unstable Fuel Cell
   FlavorText: Not For Interdimensional Travel... Explosive Shifts!
+--- !u!111 &746349816054563814
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5001802985390930966}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 35fdfe655518f68499fe26d288404bdb, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 35fdfe655518f68499fe26d288404bdb, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0

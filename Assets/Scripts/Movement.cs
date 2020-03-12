@@ -13,6 +13,7 @@ public class Movement : MonoBehaviour
     Transform transf;                    // A layer mask so that a ray can be cast just at gameobjects on the floor layer.
     int direction = 1;
     Camera cam;
+    GameObject minimapCam;
     Vector3 goalV;
     bool hit0 = true;
     string void_switch = "RT";
@@ -94,12 +95,14 @@ public class Movement : MonoBehaviour
             {
                 transf.SetPositionAndRotation(transform.position + new Vector3(0, -50, 0), transf.rotation);
                 cam.transform.SetPositionAndRotation(cam.transform.position + new Vector3(0, -50, 0), cam.transform.rotation);
+                minimapCam.transform.SetPositionAndRotation(new Vector3(cam.transform.position.x, 280, cam.transform.position.z), minimapCam.transform.rotation);
                 direction = -1;
             }
             else
             {
                 transf.SetPositionAndRotation(transform.position + new Vector3(0, 50, 0), transf.rotation);
                 cam.transform.SetPositionAndRotation(cam.transform.position + new Vector3(0, 50, 0), cam.transform.rotation);
+                minimapCam.transform.SetPositionAndRotation(new Vector3(cam.transform.position.x, 280, cam.transform.position.z), minimapCam.transform.rotation);
                 direction = 1;
             }
             gameObject.GetComponent<PlayerItems>().onShiftBroadcast();
@@ -110,5 +113,6 @@ public class Movement : MonoBehaviour
     private void OnLevelWasLoaded(int level)
     {
         cam = GameObject.Find("MainCamera").GetComponent<Camera>();
+        minimapCam = cam.transform.Find("MinimapCamera").gameObject;
     }
 }

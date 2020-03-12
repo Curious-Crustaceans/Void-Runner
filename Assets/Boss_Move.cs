@@ -21,7 +21,7 @@ public class Boss_Move : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (Vector3.Distance(player.position, boss_rb.position) <= 12)
+        if (Vector3.Distance(player.position, boss_rb.position) <= 15)
         { run = true; }
         if (run && Vector3.Distance(player.position, boss_rb.position) <= 20)
         {

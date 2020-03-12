@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1754265614980152087}
   - component: {fileID: 1754265614980152080}
   - component: {fileID: 6650814831066595081}
+  - component: {fileID: 2803047163711351296}
   m_Layer: 0
   m_Name: Prototype Pepper Pickup
   m_TagString: Untagged
@@ -108,3 +109,19 @@ MonoBehaviour:
   item: {fileID: 6942562124050991129, guid: 42689a6ef2c6e78498d993cda4f270cc, type: 3}
   ItemName: Prototype Pepper
   FlavorText: 1 Trillion Scovilles, Shots Burn!
+--- !u!111 &2803047163711351296
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1754265614980152081}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 35fdfe655518f68499fe26d288404bdb, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 35fdfe655518f68499fe26d288404bdb, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0

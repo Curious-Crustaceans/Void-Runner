@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1490230900297604695}
   - component: {fileID: 1490230900297604688}
   - component: {fileID: 5817043825327200841}
+  - component: {fileID: 5992348140492818446}
   m_Layer: 0
   m_Name: Ouroborus Relic Pickup
   m_TagString: Untagged
@@ -108,3 +109,19 @@ MonoBehaviour:
   item: {fileID: 6942562124050991129, guid: e30d913b23392104fa156d13e6cbad95, type: 3}
   ItemName: Ouroborus Relic
   FlavorText: What Was Will Be...Recursive Shots!
+--- !u!111 &5992348140492818446
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490230900297604689}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 35fdfe655518f68499fe26d288404bdb, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 35fdfe655518f68499fe26d288404bdb, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
