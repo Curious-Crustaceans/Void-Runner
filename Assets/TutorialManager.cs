@@ -50,7 +50,7 @@ public class TutorialManager : MonoBehaviour
         bool temp = Input.GetAxis(aim_horz) != 0 || Input.GetAxis(aim_vert) != 0 || Input.GetAxisRaw("FireH") != 0 || Input.GetAxisRaw("FireV") != 0;
         if (temp && !completed[1] && !hit2){
             hit2 = true;
-            StartCoroutine(showText(new string[] { "The source of your abilites is a topographically monotonic, zero point dimensional mobius flux", "For someone who has a minute worth of memories... you can steal energy from a alternate dimension you previously referred to as the void", "You can enter the Void with RT or space"})); 
+            StartCoroutine(showText(new string[] { "The source of your abilites is a topographically monotonic, zero point dimensional mobius flux", "For someone who only has a minute worth of memories... you can steal energy from a alternate dimension known as the void", "You can enter the Void with RT or space"})); 
         }
 
         if((Input.GetAxis(void_switch) > 0.1 || Input.GetKeyDown(KeyCode.Space)) && !completed[2] && !hit3){
@@ -96,7 +96,7 @@ public class TutorialManager : MonoBehaviour
     }
 
     IEnumerator Exit(){
-        yield return new WaitForSecondsRealtime(11f);
+        yield return new WaitForSecondsRealtime(16f);
         SceneManager.LoadScene("TitleScreen");
     }
 

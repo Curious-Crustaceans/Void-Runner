@@ -18,16 +18,16 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.H)){
-            if (GameObject.Find("Boss") == null)
-            {
-                GameObject.Find("Charge_Enemy").GetComponent<EnemyDMG>().enemy_health = 0;
-            }
-            else
-            {
-                GameObject.Find("Boss").GetComponent<EnemyDMG>().enemy_health = 0;
-            }
-        }
+        //if(Input.GetKeyDown(KeyCode.H)){
+        //    if (GameObject.Find("Boss") == null)
+        //    {
+        //        GameObject.Find("Charge_Enemy").GetComponent<EnemyDMG>().enemy_health = 0;
+        //    }
+        //    else
+        //    {
+        //        GameObject.Find("Boss").GetComponent<EnemyDMG>().enemy_health = 0;
+        //    }
+        //}
 
     }
 
