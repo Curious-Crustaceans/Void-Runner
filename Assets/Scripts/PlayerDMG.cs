@@ -18,7 +18,7 @@ public class PlayerDMG : MonoBehaviour
     
 
     void Awake() {
-    	player_health = player_starting_health;
+        player_health = player_starting_health;
         healthBar.SetMaxHealth(player_starting_health);
     }
 
@@ -79,11 +79,11 @@ public class PlayerDMG : MonoBehaviour
 
 
     void Update(){
-    	if (player_health <= 0) {
-    		gameover.SetActive(true);
+        if (player_health <= 0) {
+            gameover.SetActive(true);
             gameObject.SetActive(false);
-
-    	}
+            SignalHandler();
+        }
 
    }
 
@@ -94,4 +94,9 @@ public class PlayerDMG : MonoBehaviour
         gameover.SetActive(false);
         healthBar.SetHealth(player_health);
     }
+
+    public void SignalHandler(){
+        GameObject.Find("GameOverHandler").GetComponent<GameOverHandler>().FindReference();
+    }
+
 }
